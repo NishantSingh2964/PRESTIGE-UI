@@ -63,9 +63,14 @@ const Navbar = () => {
 
             {/* Center Column: Logo */}
             <div className="absolute left-1/2 -translate-x-1/2">
-                <h1 className="text-[22px] md:text-[26px] font-bold tracking-[0.2em] leading-none">
-                    PRESTIGE
-                </h1>
+                <a href="/">
+                    <img
+                        src="https://prestige-theme-allure.myshopify.com/cdn/shop/files/logo.png?v=1680783645&width=260"
+                        alt="Prestige Logo"
+                        className={`h-[18px] md:h-[22px] w-auto transition-all duration-300 ${isLight ? 'brightness-0 invert' : ''
+                            }`}
+                    />
+                </a>
             </div>
 
             {/* Right Column: Icons and Currency */}

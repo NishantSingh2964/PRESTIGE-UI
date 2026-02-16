@@ -49,7 +49,7 @@ const Timeline = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="bg-[#efefef] pb-4 md:pb-12 overflow-hidden">
+        <section className="bg-[#efefef] md:pt-24 pb-4 md:pb-12 overflow-hidden">
             <div className="container mx-auto px-0 md:px-12 lg:px-24 max-w-7xl">
                 <div className="relative flex flex-col md:flex-row items-stretch bg-white shadow-sm overflow-hidden h-[600px] md:h-[500px]">
                     {/* Left: Image Column (Absolute on mobile, relative on desktop) */}

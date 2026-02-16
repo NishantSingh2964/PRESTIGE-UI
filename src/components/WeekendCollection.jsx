@@ -33,30 +33,57 @@ const WeekendCollection = () => {
     ];
 
     return (
-        <section className="bg-[#EFEFEF] text-[#1c1c1c] w-full pb-16 md:pb-24">
-            <div className="w-full">
+        <section className="bg-[#EFEFEF] text-[#1c1c1c] w-full pb-20 md:pb-28">
+            <div className="max-w-[1600px] mx-auto">
 
                 {/* Header */}
-                <div className="flex flex-col items-center text-center gap-4 pb-12 md:pb-16 px-6">
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-medium text-[#1c1c1c]/60">
+                <div className="flex flex-col items-center text-center gap-5 pb-16 md:pb-24 px-6">
+                    <p className="text-[11px] uppercase tracking-[0.25em] font-medium text-[#1c1c1c]/60">
                         Le weekend bag
                     </p>
-                    <h2 className="text-[22px] md:text-[28px] uppercase tracking-[0.18em] font-normal text-[#1c1c1c] max-w-[80%] md:max-w-none leading-tight">
+                    <h2 className="text-[26px] md:text-[34px] uppercase tracking-[0.22em] font-light text-[#1c1c1c] leading-tight">
                         Ideal for a weekend outing
                     </h2>
                 </div>
 
-                {/* Product Grid / Scrollable Container - Refined for "small image" aesthetic with reduced starting margin */}
-                <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-12 md:gap-x-5 snap-x snap-mandatory scrollbar-hide px-6 md:px-4 lg:px-8 pb-4">
-                    {products.map((product) => (
-                        <div key={product.id} className="min-w-[140px] w-[45vw] md:min-w-0 flex-shrink-0 group cursor-pointer flex flex-col items-center text-center snap-start">
+                {/* PRODUCT CONTAINER */}
+                <div className="
+                    flex overflow-x-auto md:grid 
+                    md:grid-cols-4 
+                    gap-x-12 md:gap-x-16 lg:gap-x-24
+                    snap-x snap-mandatory 
+                    scrollbar-hide 
+                    px-6 md:px-12 lg:px-20
+                ">
 
-                            {/* Image Container */}
-                            <div className="relative w-full aspect-[1/0.95] overflow-hidden mb-5 md:mb-6">
-                                {/* Badge - Top Right as per screenshot */}
+                    {products.map((product) => (
+                        <div
+                            key={product.id}
+                            className="
+                                min-w-[160px] w-[45vw]
+                                md:min-w-0 md:w-full
+                                flex-shrink-0
+                                flex flex-col items-center text-center
+                                snap-start
+                            "
+                        >
+
+                            {/* Badge (Desktop centered above image) - Fixed height for perfect image alignment */}
+                            <div className="hidden md:flex items-center justify-center h-[14px] mb-8">
+                                {product.badge ? (
+                                    <span className="text-[11px] uppercase tracking-[0.3em] text-[#1c1c1c]/60">
+                                        {product.badge}
+                                    </span>
+                                ) : null}
+                            </div>
+
+                            {/* Image */}
+                            <div className="relative w-full max-w-[260px] md:max-w-[300px] lg:max-w-[320px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
+
+                                {/* Mobile Badge (top right only on small screens) */}
                                 {product.badge && (
-                                    <div className="absolute top-0 right-0 z-10 p-4">
-                                        <span className="text-[10px] uppercase tracking-[0.15em] font-medium text-[#1c1c1c]/60">
+                                    <div className="absolute top-0 right-0 p-3 md:hidden">
+                                        <span className="text-[10px] uppercase tracking-[0.2em] text-[#1c1c1c]/60">
                                             {product.badge}
                                         </span>
                                     </div>
@@ -65,10 +92,10 @@ const WeekendCollection = () => {
                                 <img
                                     src={product.image}
                                     alt={product.title}
-                                    className="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                                    className="w-full h-full object-contain transition-transform duration-700 ease-out hover:scale-105"
                                 />
 
-                                {/* Quick Add Button - Square "+" white button bottom right */}
+                                {/* Quick Add */}
                                 <div className="absolute bottom-0 right-0 p-4">
                                     <button className="w-8 h-8 md:w-10 md:h-10 bg-white shadow-sm flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,12 +105,12 @@ const WeekendCollection = () => {
                                 </div>
                             </div>
 
-                            {/* Product Info */}
-                            <div className="flex flex-col gap-1.5 items-center px-4">
-                                <h3 className="text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-normal leading-relaxed text-[#1c1c1c]">
+                            {/* Info */}
+                            <div className="flex flex-col gap-2 items-center px-4">
+                                <h3 className="text-[12px] uppercase tracking-[0.18em] font-light leading-relaxed text-[#1c1c1c] max-w-[260px]">
                                     {product.title}
                                 </h3>
-                                <p className="text-[11px] md:text-[12px] font-normal text-[#1c1c1c]/50 tracking-[0.1em]">
+                                <p className="text-[12px] font-light text-[#1c1c1c]/50 tracking-[0.15em]">
                                     {product.price}
                                 </p>
                             </div>
@@ -97,4 +124,4 @@ const WeekendCollection = () => {
     )
 }
 
-export default WeekendCollection
+export default WeekendCollection;
