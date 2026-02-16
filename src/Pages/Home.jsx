@@ -24,7 +24,7 @@ import Newsletter from '../components/Newsletter'
 import SocialSection from '../components/SocialGrid'
 import Footer from '../components/Footer'
 
-const home = () => {
+const Home = () => {
     return (
         <div>
             <Banner />
@@ -55,4 +55,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home;
