@@ -36,7 +36,17 @@ const Navbar = () => {
         { name: 'United States (USD $)', code: 'USD $', country: 'United States', flag: 'https://flagcdn.com/w20/us.png' },
     ];
 
+    const [bannerHeight, setBannerHeight] = useState(68);
     const isLight = !isScrolled && !isHovered;
+
+    useEffect(() => {
+        const updateHeight = () => {
+            setBannerHeight(window.innerWidth < 768 ? 44 : 68);
+        };
+        updateHeight();
+        window.addEventListener('resize', updateHeight);
+        return () => window.removeEventListener('resize', updateHeight);
+    }, []);
 
     return (
         <nav
@@ -44,7 +54,7 @@ const Navbar = () => {
             onMouseLeave={() => setIsHovered(false)}
             className={`h-[75px] flex items-center justify-between px-6 md:px-12 font-sans uppercase fixed w-full z-50 transition-all duration-300 ${isLight ? 'bg-transparent text-white border-transparent' : 'bg-white text-black border-b border-gray-100 shadow-sm'
                 }`}
-            style={{ top: isScrolled ? '0' : '68px' }}
+            style={{ top: isScrolled ? '0' : `${bannerHeight}px` }}
         >
             {/* Left Column: Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
