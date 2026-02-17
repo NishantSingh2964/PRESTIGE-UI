@@ -71,7 +71,7 @@ const CountdownSale = () => {
                     <div>
                         <a
                             href="/collections/sale"
-                            className="inline-block bg-white text-black px-8 py-3 text-[10px] uppercase tracking-[0.2em] font-medium hover:bg-white/90 transition-colors"
+                            className="inline-block btn-hover-white px-8 py-3 text-[10px] uppercase tracking-[0.2em] font-medium"
                         >
                             Shop now
                         </a>

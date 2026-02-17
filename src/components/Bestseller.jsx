@@ -124,7 +124,7 @@ const Bestseller = () => {
                                 />
 
                                 {/* Quick Add Button - Responsive visibility */}
-                                <button className="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-8 h-8 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-lg opacity-100 md:opacity-0 translate-y-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 hover:bg-black hover:text-white">
+                                <button className="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center shadow-lg opacity-100 md:opacity-0 translate-y-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 btn-hover-white">
                                     <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" />
                                     </svg>
@@ -148,7 +148,7 @@ const Bestseller = () => {
                 <div className="mt-12 md:mt-20 flex justify-center">
                     <a
                         href="#"
-                        className="px-8 py-3.5 md:px-12 md:py-4 bg-[#1c1c1c] text-white text-[11px] md:text-[13px] tracking-[0.18em] uppercase font-medium hover:bg-black transition-colors min-w-[240px] md:min-w-[300px] text-center"
+                        className="px-8 py-3.5 md:px-12 md:py-4 btn-hover-dark text-[11px] md:text-[13px] tracking-[0.18em] uppercase font-medium min-w-[240px] md:min-w-[300px] text-center"
                     >
                         All {activeTab.toLowerCase()}'s bags
                     </a>

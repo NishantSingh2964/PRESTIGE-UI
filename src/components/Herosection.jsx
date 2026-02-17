@@ -74,13 +74,13 @@ const Herosection = () => {
                         {/* Content */}
                         <div className="relative z-20 w-full max-w-[1200px] px-10 text-center text-white">
                             <div
-                                className={`inline-flex flex-col items-center transition-transform duration-700 ease-[cubic-bezier(0.215,0.61,0.355,1)] ${index === currentSlide ? 'translate-y-0' : 'translate-y-5'
-                                    } ${slide.bordered ? 'border border-white/30 py-10 px-10 md:py-16 md:px-20' : ''}`}
+                                className={`inline-flex flex-col items-center max-w-2xl mx-auto transition-transform duration-700 ease-[cubic-bezier(0.215,0.61,0.355,1)] ${index === currentSlide ? 'translate-y-0' : 'translate-y-5'
+                                    } ${slide.bordered ? 'border border-white/60 py-8 px-8 md:py-12 md:px-16' : ''}`}
                             >
                                 <span className="text-[12px] tracking-[0.2em] uppercase mb-4 md:mb-5 block font-medium">
                                     {slide.subtitle}
                                 </span>
-                                <h2 className="text-[28px] md:text-[48px] tracking-[0.15em] uppercase mb-8 md:mb-10 font-normal leading-tight">
+                                <h2 className="text-[24px] md:text-[40px] tracking-[0.15em] uppercase mb-8 md:mb-10 font-normal leading-tight whitespace-pre-line">
                                     {slide.title}
                                 </h2>
                                 <div className="flex gap-4 md:gap-5 justify-center">
@@ -88,9 +88,7 @@ const Herosection = () => {
                                         <a
                                             key={i}
                                             href={action.link}
-                                            className={`inline-block px-8 py-3.5 md:px-11 text-[13px] tracking-[0.18em] uppercase border border-white transition-all duration-450 ease-[cubic-bezier(0.785,0.135,0.15,0.86)] font-medium ${action.text === 'MEN'
-                                                ? 'bg-transparent text-white hover:bg-white hover:text-black'
-                                                : 'bg-white text-black hover:bg-transparent hover:text-white'
+                                            className={`inline-block px-8 py-3.5 md:px-11 text-[13px] tracking-[0.18em] uppercase font-medium ${action.text === 'MEN' ? 'btn-hover-black-hero' : 'btn-hover-white'
                                                 }`}
                                         >
                                             {action.text}

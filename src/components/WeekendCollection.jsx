@@ -97,7 +97,7 @@ const WeekendCollection = () => {
 
                                 {/* Quick Add */}
                                 <div className="absolute bottom-0 right-0 p-4">
-                                    <button className="w-8 h-8 md:w-10 md:h-10 bg-white shadow-sm flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
+                                    <button className="w-8 h-8 md:w-10 md:h-10 shadow-sm flex items-center justify-center btn-hover-white">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" />
                                         </svg>

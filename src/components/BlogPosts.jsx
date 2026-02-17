@@ -88,7 +88,7 @@ const BlogPosts = () => {
                 <div className="text-center mt-10 md:mt-20">
                     <a
                         href="/blogs/news"
-                        className="inline-block bg-[#1c1c1c] text-white px-6 py-3 text-[10px] md:text-[12px] uppercase tracking-[0.18em] font-light transition-colors hover:bg-black"
+                        className="inline-block btn-hover-dark px-6 py-3 text-[10px] md:text-[12px] uppercase tracking-[0.18em] font-light"
                     >
                         Discover all our stories
                     </a>

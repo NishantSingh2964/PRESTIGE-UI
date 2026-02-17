@@ -145,7 +145,7 @@ const FeaturedProduct = () => {
                             </div>
 
                             {/* Add to Cart Button */}
-                            <button className="w-full bg-[#1c1c1c] text-white h-[40px] text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-light hover:bg-black transition-all duration-500 shadow-sm active:translate-y-[1px]">
+                            <button className="w-full btn-hover-dark h-[40px] text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-light shadow-sm active:translate-y-[1px]">
                                 Add to cart
                             </button>
                         </div>

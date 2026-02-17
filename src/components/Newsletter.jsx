@@ -69,7 +69,7 @@ const Newsletter = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="bg-white text-black px-12 py-4 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap"
+                                    className="btn-hover-white px-12 py-4 text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light whitespace-nowrap"
                                 >
                                     Subscribe
                                 </button>
