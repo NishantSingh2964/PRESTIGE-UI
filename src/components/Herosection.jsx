@@ -74,21 +74,21 @@ const Herosection = () => {
                         {/* Content */}
                         <div className="relative z-20 w-full max-w-[1200px] px-10 text-center text-white">
                             <div
-                                className={`inline-flex flex-col items-center max-w-2xl mx-auto transition-transform duration-700 ease-[cubic-bezier(0.215,0.61,0.355,1)] ${index === currentSlide ? 'translate-y-0' : 'translate-y-5'
-                                    } ${slide.bordered ? 'border border-white/60 py-8 px-8 md:py-12 md:px-16' : ''}`}
+                                className={`inline-flex flex-col items-center max-w-md mx-auto transition-transform duration-700 ease-[cubic-bezier(0.215,0.61,0.355,1)] ${index === currentSlide ? 'translate-y-0' : 'translate-y-5'
+                                    } ${slide.bordered ? 'border border-white py-4 px-4 md:py-10 md:px-14' : ''}`}
                             >
-                                <span className="text-[12px] tracking-[0.2em] uppercase mb-4 md:mb-5 block font-medium">
+                                <span className="text-[9px] tracking-[0.3em] uppercase mb-3 md:mb-5 block font-medium opacity-90">
                                     {slide.subtitle}
                                 </span>
-                                <h2 className="text-[24px] md:text-[40px] tracking-[0.15em] uppercase mb-8 md:mb-10 font-normal leading-tight whitespace-pre-line">
+                                <h2 className="text-[20px] md:text-[32px] tracking-[0.18em] uppercase mb-6 md:mb-10 font-normal leading-tight whitespace-pre-line text-center">
                                     {slide.title}
                                 </h2>
-                                <div className="flex gap-4 md:gap-5 justify-center">
+                                <div className="flex gap-3 md:gap-4 justify-center w-full">
                                     {slide.actions.map((action, i) => (
                                         <a
                                             key={i}
                                             href={action.link}
-                                            className={`inline-block px-8 py-3.5 md:px-11 text-[13px] tracking-[0.18em] uppercase font-medium ${action.text === 'MEN' ? 'btn-hover-black-hero' : 'btn-hover-white'
+                                            className={`inline-block px-5 py-2 md:px-8 md:py-3 text-[10px] tracking-[0.2em] uppercase font-medium min-w-[150px] md:min-w-[170px] text-center ${action.text === 'MEN' ? 'btn-hover-black-hero' : 'btn-hover-white'
                                                 }`}
                                         >
                                             {action.text}
