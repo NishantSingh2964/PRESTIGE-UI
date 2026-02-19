@@ -17,7 +17,7 @@ const Ouraimsection = () => {
 
                     {/* Content */}
                     <div className="flex flex-col items-center gap-8 md:gap-10">
-                        <h2 className="text-[20px] md:text-[32px] tracking-[0.15em] uppercase font-light leading-relaxed text-[#1c1c1c] max-w-2xl px-4 md:px-0">
+                        <h2 className="text-[20px] md:text-[32px] tracking-[0.15em] uppercase font-light leading-tight text-[#1c1c1c] max-w-2xl px-4 md:px-0">
                             Our aim: offer elegant, timeless & functional products
                         </h2>
 

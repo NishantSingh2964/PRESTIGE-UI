@@ -75,22 +75,22 @@ const Bestseller = () => {
     };
 
     return (
-        <section className="py-12 md:py-20 bg-[#EFEFEF]">
-            <div className="container mx-auto px-6">
+        <section className="py-16 md:py-24 bg-[#EFEFEF]">
+            <div className="w-full max-w-[1440px] mx-auto px-6">
                 {/* Header */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 mb-10 md:mb-16">
-                    <p className="text-[10px] md:text-[12px] tracking-[0.18em] uppercase font-medium text-gray-400">Our best sellers</p>
-                    <div className="flex gap-8 md:gap-10">
+                <div className="flex flex-col items-center gap-6 md:gap-5 mb-12 md:mb-20">
+                    <p className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light text-gray-800">Our best sellers</p>
+                    <div className="flex gap-12 md:gap-9">
                         {['Women', 'Men'].map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`text-[18px] md:text-[24px] tracking-[0.15em] uppercase font-normal transition-all duration-300 relative pb-2 ${activeTab === tab ? 'text-black' : 'text-gray-300 hover:text-gray-500'
+                                className={`text-[18px] md:text-[28px] tracking-[0.2em] uppercase font-light transition-all duration-300 relative pb-1 ${activeTab === tab ? 'text-gray-800' : 'text-gray-800 hover:text-gray-800'
                                     }`}
                             >
                                 {tab}
                                 {activeTab === tab && (
-                                    <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black animate-in fade-in slide-in-from-left-2 duration-500"></div>
+                                    <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black"></div>
                                 )}
                             </button>
                         ))}
@@ -98,18 +98,20 @@ const Bestseller = () => {
                 </div>
 
                 {/* Grid / Scrollable Container */}
-                <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12 snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6 md:mx-0 md:px-0">
+                <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 md:gap-x-12 lg:gap-x-24 gap-y-12 md:gap-y-12 snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6 md:mx-0 md:px-0">
                     {products[activeTab].map((product) => (
-                        <div key={product.id} className="min-w-[65vw] sm:min-w-[45vw] md:min-w-0 group cursor-pointer snap-start">
-                            {/* Image Container */}
-                            <div className="relative aspect-[4/5] overflow-hidden mb-3 md:mb-6">
-                                {/* Badge */}
+                        <div key={product.id} className="min-w-[70vw] sm:min-w-[45vw] md:min-w-0 group cursor-pointer snap-start">
+                            {/* Badge Above Image */}
+                            <div className="h-4 mb-1">
                                 {product.badge && (
-                                    <span className="absolute top-2 left-2 md:top-4 md:left-4 z-10 bg-white px-2 md:px-3 py-0.5 md:py-1 text-[8px] md:text-[10px] tracking-[0.1em] font-semibold">
+                                    <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase font-medium text-gray-500">
                                         {product.badge}
                                     </span>
                                 )}
+                            </div>
 
+                            {/* Image Container */}
+                            <div className="relative aspect-square overflow-hidden mb-4 md:mb-6">
                                 {/* Primary Image */}
                                 <img
                                     src={product.image}
@@ -123,20 +125,20 @@ const Bestseller = () => {
                                     className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
                                 />
 
-                                {/* Quick Add Button - Responsive visibility */}
-                                <button className="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center shadow-lg opacity-100 md:opacity-0 translate-y-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 btn-hover-white">
-                                    <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {/* Quick Add Button */}
+                                <button className="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 btn-hover-white bg-white">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" />
                                     </svg>
                                 </button>
                             </div>
 
                             {/* Info */}
-                            <div className="text-center flex flex-col gap-1 md:gap-2">
-                                <h3 className="text-[11px] md:text-[13px] tracking-[0.1em] uppercase font-normal text-gray-900 group-hover:text-gray-600 transition-colors line-clamp-2 px-2">
+                            <div className="text-center flex flex-col gap-2 md:gap-3 px-4">
+                                <h3 className="text-[11px] md:text-[12px] tracking-[0.15em] uppercase font-normal text-gray-900 group-hover:text-gray-600 transition-colors line-clamp-2 leading-relaxed">
                                     {product.title}
                                 </h3>
-                                <p className="text-[11px] md:text-[13px] text-gray-500 font-light">
+                                <p className="text-[11px] md:text-[12px] tracking-[0.05em] text-gray-500 font-light">
                                     {product.price}
                                 </p>
                             </div>
@@ -145,10 +147,10 @@ const Bestseller = () => {
                 </div>
 
                 {/* Footer Button */}
-                <div className="mt-12 md:mt-20 flex justify-center">
+                <div className="mt-16 md:mt-8 flex justify-center">
                     <a
                         href="#"
-                        className="px-8 py-3.5 md:px-12 md:py-4 btn-hover-dark text-[11px] md:text-[13px] tracking-[0.18em] uppercase font-medium min-w-[240px] md:min-w-[300px] text-center"
+                        className="py-3 btn-hover-dark bg-black text-white text-[11px] md:text-[12px] tracking-[0.2em] uppercase font-light min-w-[220px] md:min-w-[220px] text-center"
                     >
                         All {activeTab.toLowerCase()}'s bags
                     </a>
