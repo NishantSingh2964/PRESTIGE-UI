@@ -9,7 +9,7 @@ const CountdownSale = () => {
     });
 
     // Set target date (you can modify this)
-    const targetDate = new Date('2026-11-25T00:00:00').getTime();
+    const targetDate = new Date('2026-05-31T00:00:00').getTime();
 
     useEffect(() => {
         const calculateTimeLeft = () => {

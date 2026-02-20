@@ -15,7 +15,7 @@
 
   .btn-hover-dark {
     @apply btn-hover-base text-white border border-[#1c1c1c];
-    background-image: linear-gradient(to right, transparent 50%, #1c1c1c 50%);
+    background-image: linear-gradient(to right, white 50%, #1c1c1c 50%);
   }
 
   .btn-hover-dark:hover {
