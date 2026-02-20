@@ -78,7 +78,7 @@ const BeforeAfter = () => {
                             className="w-full h-full object-cover"
                             draggable="false"
                         />
-                        <div className="absolute bottom-10 left-10 text-black z-30 pointer-events-none">
+                        <div className="absolute bottom-10 left-10 text-black z-10 pointer-events-none">
                             <p className="text-[13px] md:text-[15px] uppercase tracking-[0.15em] font-light mb-1">
                                 Almond green Liégé
                             </p>

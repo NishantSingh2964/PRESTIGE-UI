@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 const VideoSection = () => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [hasPlayed, setHasPlayed] = useState(false);
 
     const togglePlay = () => {
         if (videoRef.current) {
@@ -10,6 +11,7 @@ const VideoSection = () => {
                 videoRef.current.pause();
             } else {
                 videoRef.current.play();
+                setHasPlayed(true);
             }
             setIsPlaying(!isPlaying);
         }
@@ -25,6 +27,12 @@ const VideoSection = () => {
                 loop
                 muted
                 playsInline
+                controls={hasPlayed} // Initially hidden, shows after playback starts
+                onPlay={() => {
+                    setIsPlaying(true);
+                    setHasPlayed(true);
+                }}
+                onPause={() => setIsPlaying(false)}
                 onClick={togglePlay}
             >
                 <source
@@ -34,13 +42,14 @@ const VideoSection = () => {
                 Your browser does not support the video tag.
             </video>
 
-            {/* Overlay Grid/Texture (Optional, to mimic the texture in screenshot if needed, but keeping clean for now) */}
+            {/* Overlay Grid/Texture */}
             <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 pointer-events-none" />
 
             {/* Content Overlay */}
             <div
-                className={`absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 p-4 transition-opacity duration-500 ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'}`}
-                onClick={togglePlay} // Allow clicking overlay to play
+                className={`absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 p-4 transition-opacity duration-500 ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+                    }`}
+                onClick={togglePlay}
             >
                 {/* Subheader */}
                 <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] font-light mb-3 md:mb-5">
