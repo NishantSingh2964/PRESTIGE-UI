@@ -23,6 +23,7 @@ const ScrollingImages = () => {
         }
     ];
 
+    // Image switching observer (unchanged)
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
             const observer = new IntersectionObserver(
@@ -31,37 +32,63 @@ const ScrollingImages = () => {
                         setActiveIndex(index);
                     }
                 },
-                {
-                    threshold: 0.5,
-                    rootMargin: "-25% 0px -25% 0px"
-                }
+                { threshold: 0.6 }
             );
 
             if (ref) observer.observe(ref);
             return observer;
         });
 
-        return () => {
-            observers.forEach(observer => observer.disconnect());
-        };
+        return () => observers.forEach(observer => observer.disconnect());
     }, [items.length]);
+
+    // Smooth natural fade for text blocks
+    useEffect(() => {
+        const handleScroll = () => {
+            itemRefs.current.forEach((el) => {
+                if (!el) return;
+
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                const elementCenter = rect.top + rect.height / 2;
+                const viewportCenter = windowHeight / 2;
+
+                const distance = Math.abs(viewportCenter - elementCenter);
+                const maxDistance = windowHeight / 2;
+
+                let opacity = 1 - distance / maxDistance;
+                opacity = Math.max(0, Math.min(1, opacity));
+
+                el.style.opacity = opacity;
+                el.style.transform = `translateY(${distance * 0.02}px)`;
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <section className="relative w-full">
-            {/* Fixed Background Image */}
+
+            {/* Fixed Background */}
             <div
                 className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat bg-fixed"
                 style={{
                     backgroundImage: `url('https://prestige-theme-allure.myshopify.com/cdn/shop/files/Images_with_text_scroll_-_Background_image_-_Desktop_-_home.jpg?v=1680772698&width=3000')`
                 }}
             />
-            {/* Dark Overlay */}
             <div className="fixed inset-0 z-[-1] bg-black/30 bg-fixed" />
 
             <div className="container mx-auto px-0 md:px-12 lg:px-24">
-                {/* Desktop: Sticky Layout */}
+
+                {/* Desktop Layout */}
                 <div className="hidden md:flex flex-row gap-0">
-                    {/* Left: Sticky Image Side */}
+
+                    {/* Sticky Image */}
                     <div className="w-1/2 h-[100vh] sticky top-0 flex items-center justify-center">
                         <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden shadow-2xl">
                             {items.map((item, index) => (
@@ -76,24 +103,28 @@ const ScrollingImages = () => {
                         </div>
                     </div>
 
-                    {/* Right: Scrollable Text Side */}
+                    {/* Scrollable Text */}
                     <div className="w-1/2 flex flex-col">
                         {items.map((item, index) => (
                             <div
                                 key={index}
                                 ref={el => itemRefs.current[index] = el}
-                                className="h-[100vh] flex flex-col items-center justify-center p-12 lg:p-24"
+                                className="h-[100vh] flex items-center justify-center p-12 lg:p-24 transition-all duration-200 ease-out"
+                                style={{ opacity: 0 }}
                             >
                                 <div className="max-w-md w-full text-center">
                                     <p className="text-[12px] tracking-[0.2em] uppercase font-extralight text-white/70 mb-5">
                                         {item.number}
                                     </p>
+
                                     <h3 className="text-[15px] md:text-[20px] lg:text-[25px] tracking-[0.1em] uppercase font-extralight text-white mb-8 leading-tight">
                                         {item.title}
                                     </h3>
+
                                     <p className="text-[14px] md:text-[15px] leading-[1.7] font-extralight text-white/85 mb-10 max-w-sm mx-auto">
                                         {item.text}
                                     </p>
+
                                     <a
                                         href={item.linkUrl}
                                         className="text-[12px] tracking-[0.18em] uppercase font-extralight text-white border-b border-white/30 hover:border-white transition-all pb-1 duration-300"
@@ -106,7 +137,7 @@ const ScrollingImages = () => {
                     </div>
                 </div>
 
-                {/* Mobile: Standard Layout - Refined with Pagination-Only Control */}
+                {/* Mobile Layout (unchanged) */}
                 <div className="md:hidden py-24 overflow-hidden">
                     <div
                         className="flex transition-transform duration-700 ease-in-out"
@@ -129,7 +160,6 @@ const ScrollingImages = () => {
                         ))}
                     </div>
 
-                    {/* Pagination Dots - Controlled Navigation */}
                     <div className="flex justify-center gap-4 mt-2">
                         {items.map((_, index) => (
                             <button
@@ -141,7 +171,7 @@ const ScrollingImages = () => {
                             />
                         ))}
                     </div>
-                </div>
+                </div>s
             </div>
         </section>
     );

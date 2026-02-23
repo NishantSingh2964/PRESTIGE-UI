@@ -35,7 +35,7 @@ const CountdownSale = () => {
     const formatNumber = (num) => String(num).padStart(2, '0');
 
     return (
-        <section className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+        <section className="relative w-full h-[400px] md:h-[550px] overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
                 <picture>
@@ -59,13 +59,13 @@ const CountdownSale = () => {
             <div className="relative h-full container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-center md:justify-between py-12 md:py-16 gap-12 md:gap-12">
                 {/* Left: Promotional Content */}
                 <div className="text-white max-w-xl flex flex-col items-center md:items-start text-center md:text-left gap-6">
-                    <p className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-medium">
+                    <p className="text-[9px] md:text-[9px] uppercase tracking-[0.1em] font-light text-white/90">
                         Limited time only
                     </p>
-                    <h2 className="text-xl md:text-2xl lg:text-4xl uppercase tracking-[0.2em] font-extralight leading-tight">
+                    <h2 className="text-xl md:text-2xl lg:text-4xl uppercase tracking-[0.2em] font-light leading-tight">
                         Super Sale Up to 40% off
                     </h2>
-                    <p className="text-xs md:text-sm leading-normal tracking-wider font-extralight text-white/90">
+                    <p className="text-xs md:text-sm leading-normal tracking-wider font-light text-white/90">
                         Shop our selection of exclusive handbags and backpacks at reduced price during the Super Sale. Hurry up!
                     </p>
                     <div>

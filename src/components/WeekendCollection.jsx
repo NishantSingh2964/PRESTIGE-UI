@@ -50,17 +50,17 @@ const WeekendCollection = () => {
                 <div className="
                     flex overflow-x-auto md:grid 
                     md:grid-cols-4 
-                    gap-x-12 md:gap-x-16 lg:gap-x-24
+                    gap-x-4 md:gap-x-6 lg:gap-x-8
                     snap-x snap-mandatory 
                     scrollbar-hide 
-                    px-6 md:px-12 lg:px-20
+                    px-4 md:px-6 lg:px-8
                 ">
 
                     {products.map((product) => (
                         <div
                             key={product.id}
                             className="
-                                min-w-[160px] w-[45vw]
+                                min-w-[280px] w-[80vw]
                                 md:min-w-0 md:w-full
                                 flex-shrink-0
                                 flex flex-col items-center text-center
@@ -78,7 +78,7 @@ const WeekendCollection = () => {
                             </div>
 
                             {/* Image */}
-                            <div className="relative w-full max-w-[260px] md:max-w-[300px] lg:max-w-[320px] aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
+                            <div className="relative w-full max-w-[380px] md:max-w-none aspect-[1/0.9] overflow-hidden mb-8 md:mb-10">
 
                                 {/* Mobile Badge (top right only on small screens) */}
                                 {product.badge && (
