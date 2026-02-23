@@ -33,10 +33,10 @@ const Footer = () => {
 
             <div className="container mx-auto px-6 md:px-12 max-w-[1600px]">
                 {/* Main Footer Content */}
-                <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 mb-20">
+                <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-16 mb-8">
 
                     {/* Newsletter Block */}
-                    <div className="flex flex-col gap-6 text-left items-start flex-1 max-w-[340px]">
+                    <div className="flex flex-col gap-6 text-left items-start flex-1 max-w-[300px]">
                         <h4 className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[#1c1c1c]">
                             Newsletter
                         </h4>
@@ -75,7 +75,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='flex flex-col sm:flex-row gap-20 lg:gap-32 flex-[2] justify-end'>
+                    <div className="flex flex-col sm:flex-row flex-[2] justify-between gap-12 lg:gap-10 ml-0 md:ml-28">
                         {/* Shop Links Block */}
                         <div className="flex flex-col gap-6 text-left">
                             <h4 className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-medium text-[#1c1c1c]">
@@ -119,7 +119,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar Content - Realigned */}
-                <div className="pt-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-[#1c1c1c]/5">
+                <div className=" flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 
                     {/* Localization Selector (Left) */}
                     <div className="relative z-[70] flex-1">

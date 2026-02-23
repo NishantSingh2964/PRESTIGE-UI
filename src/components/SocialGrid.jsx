@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 const socialImages = [
     "//prestige-theme-allure.myshopify.com/cdn/shop/files/Multi-column_-_image1.jpg?v=1676464474&width=1400",
@@ -11,10 +11,30 @@ const socialImages = [
 const services = [
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M21 8V21H3V8" />
-                <path d="M1 3H23V8H1V3Z" />
-                <path d="M10 12H14" />
+            <svg
+                className="w-8 h-8 text-[#1c1c1c]/70"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+            >
+                <path
+                    clipRule="evenodd"
+                    d="M.75 5.25 12 9.75l11.25-4.5L12 .75.75 5.25Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    clipRule="evenodd"
+                    d="M.75 5.25v13.5L12 23.25V9.75L.75 5.25Zm22.5 0v13.5L12 23.25V9.75l11.25-4.5Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="m18.187 7.275-11.25-4.5M20.625 16.5l-1.875.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
             </svg>
         ),
         title: "Express Delivery",
@@ -22,9 +42,23 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
+            <svg
+                className="w-8 h-8 text-[#1c1c1c]/70"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+            >
+                <path
+                    d="m1.25 15.08 2.207-3.384 3.385 2.206"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="M13.13 2.5a9.525 9.525 0 1 1 0 19.049 9.68 9.68 0 0 1-9.673-9.853"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
             </svg>
         ),
         title: "Free Returns",
@@ -32,8 +66,24 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            <svg
+                className="w-8 h-8 text-[#1c1c1c]/70"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+            >
+                <path
+                    clipRule="evenodd"
+                    d="M11.25 18.75a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5h-1.5v4.5l-4.5-4.5h-4.5Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="m6.75 12.75-3 3v-4.5h-1.5a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
             </svg>
         ),
         title: "Available Customer Service",
@@ -41,9 +91,24 @@ const services = [
     },
     {
         icon: (
-            <svg className="w-8 h-8 text-[#1c1c1c]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <rect x="2" y="5" width="20" height="14" rx="2" />
-                <path d="M2 10h20" />
+            <svg
+                className="w-8 h-8 text-[#1c1c1c]/70"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+            >
+                <path
+                    clipRule="evenodd"
+                    d="M.75 5.25a1.5 1.5 0 0 1 1.5-1.5h19.5a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5H2.25a1.5 1.5 0 0 1-1.5-1.5V5.25Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="M.75 8.25h22.5m-18 4.5h8.25m-8.25 3h5.25"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
             </svg>
         ),
         title: "Payment in 3x",
@@ -53,7 +118,6 @@ const services = [
 
 const SocialSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const sectionRef = useRef(null);
     const servicesRef = useRef(null);
 
     const handleScroll = () => {
@@ -73,7 +137,7 @@ const SocialSection = () => {
     };
 
     return (
-        <section ref={sectionRef} className="bg-[#f3f3f3] py-16 md:py-20 overflow-hidden">
+        <section className="bg-[#f3f3f3] py-16 md:py-20 overflow-hidden">
             <div className="container mx-auto px-6 md:px-8 lg:px-12 max-w-[1600px]">
 
                 {/* Header */}
@@ -87,27 +151,11 @@ const SocialSection = () => {
                 </div>
 
                 {/* SOCIAL IMAGES */}
-                <div className="
-                    flex md:grid
-                    md:grid-cols-5
-                    gap-4 md:gap-6 lg:gap-8
-                    overflow-x-auto md:overflow-visible
-                    snap-x snap-mandatory
-                    scrollbar-hide
-                    mb-10 md:mb-20
-                ">
+                <div className="flex md:grid md:grid-cols-5 gap-4 md:gap-6 lg:gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide mb-10 md:mb-20">
                     {socialImages.map((image, index) => (
                         <div
                             key={index}
-                            className="
-                                shrink-0
-                                w-[70%] sm:w-[45%]
-                                md:w-auto
-                                aspect-square
-                                snap-start
-                                overflow-hidden
-                                bg-white
-                            "
+                            className="shrink-0 w-[70%] sm:w-[45%] md:w-auto aspect-square snap-start overflow-hidden bg-white"
                         >
                             <img
                                 src={image}
@@ -124,24 +172,12 @@ const SocialSection = () => {
                     <div
                         ref={servicesRef}
                         onScroll={handleScroll}
-                        className="
-                            flex md:grid
-                            md:grid-cols-2 lg:grid-cols-4
-                            overflow-x-auto md:overflow-visible
-                            snap-x snap-mandatory
-                            scrollbar-hide
-                        "
+                        className="flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide"
                     >
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="
-                                    w-full shrink-0
-                                    md:w-auto
-                                    snap-start
-                                    flex flex-col items-center text-center
-                                    px-6 md:px-0
-                                "
+                                className="w-[85%] sm:w-[75%] md:w-auto shrink-0 snap-start flex flex-col items-center text-center px-6 md:px-0"
                             >
                                 <div className="mb-6 text-[#1c1c1c]/80">
                                     {service.icon}

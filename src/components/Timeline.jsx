@@ -90,15 +90,14 @@ const Timeline = () => {
                             <button
                                 key={index}
                                 onClick={() => setActiveIndex(index)}
-                                className={`group relative py-2 text-[13px] tracking-[0.2em] transition-all duration-300 flex-shrink-0 snap-center ${activeIndex === index
-                                    ? 'text-[#1c1c1c] font-medium'
-                                    : 'text-[#1c1c1c]/40 hover:text-[#1c1c1c]/70'
+                                className={`text-[13px] tracking-[0.2em] transition-all duration-300 transform origin-bottom flex-shrink-0 snap-center border-b
+    ${activeIndex === index
+                                        ? 'text-[#1c1c1c] font-medium scale-125 border-[#1c1c1c]'
+                                        : 'text-[#1c1c1c]/40 hover:text-[#1c1c1c]/70 scale-100 border-transparent'
                                     }`}
                                 aria-label={`View story from ${item.year}`}
                             >
                                 {item.year}
-                                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-[#1c1c1c] transition-all duration-500 ${activeIndex === index ? 'w-full' : 'w-0 group-hover:w-4'
-                                    }`} />
                             </button>
                         ))}
                     </div>

@@ -56,7 +56,7 @@ const BlogCard = ({ post }) => {
 
 const BlogPosts = () => {
     return (
-        <section className="bg-[#efefef] pt-12 pb-12 md:pb-20 px-6 md:px-24 lg:px-40 border-b border-[#1c1c1c]/10">
+        <section className="bg-[#efefef] pt-12 pb-12 md:pb-20 px-6 md:px-24 lg:px-28 border-b border-[#1c1c1c]/10">
             <div className="container mx-auto max-w-7xl">
 
                 {/* Section Header */}
@@ -85,7 +85,7 @@ const BlogPosts = () => {
                 </div>
 
                 {/* Footer Button */}
-                <div className="text-center mt-10 md:mt-20">
+                <div className="text-center mt-10 md:mt-14">
                     <a
                         href="/blogs/news"
                         className="inline-block btn-hover-dark px-6 py-3 text-[10px] md:text-[12px] uppercase tracking-[0.18em] font-light"

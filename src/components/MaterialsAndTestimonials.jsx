@@ -24,7 +24,7 @@ const MaterialsAndTestimonials = () => {
     return (
         <div className="materials-testimonials-section">
             {/* Materials Section */}
-            <section className="relative h-[400px] md:h-[300px] lg:h-[500px] overflow-hidden">
+            <section className="relative h-[400px] md:h-[300px] lg:h-[600px] overflow-hidden">
                 <picture>
                     <source
                         media="(max-width: 699px)"
@@ -43,7 +43,7 @@ const MaterialsAndTestimonials = () => {
                         <p className="text-[12px] uppercase tracking-[0.4em] font-light text-[#1c1c1c] mb-6">
                             Materials
                         </p>
-                        <p className="text-[10px] md:text-[12px] font-extralight text-[#1c1c1c] leading-relaxed mb-8">
+                        <p className="text-[10px] md:text-[12px] font-extralight text-black leading-relaxed mb-8">
                             We only work with the best leather, chosen in collaboration with our factory. Made in Italy.
                         </p>
                         <a
@@ -57,15 +57,15 @@ const MaterialsAndTestimonials = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="bg-[#1c1c1c] py-10 md:py-16">
-                <div className="container mx-auto px-10 md:px-24 lg:px-80 max-w-7xl text-center">
+            <section className="bg-[#1c1c1c] py-10 md:py-16 lg:py-20">
+                <div className="container mx-auto px-10 md:px-24 lg:px-96 max-w-7xl text-center">
                     {/* Active Testimonial Quote */}
                     <div className="min-h-[100px] md:min-h-[120px] flex items-center justify-center mb-16">
                         <div
                             key={activeIndex}
                             className="animate-in fade-in slide-in-from-bottom-2 duration-700"
                         >
-                            <p className="text-[18px] md:text-[22px] font-light italic text-white/90 leading-relaxed tracking-tight">
+                            <p className="text-[18px] md:text-[20px] font-light text-white/90 leading-relaxed tracking-tight">
                                 {testimonials[activeIndex].quote}
                             </p>
                         </div>
