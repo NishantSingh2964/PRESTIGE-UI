@@ -1,4 +1,4 @@
-import Home from './Pages/home.jsx'
+import Home from './Pages/Home.jsx'
 import NewsletterPopup from './components/NewsletterPopup.jsx'
 
 function App() {
