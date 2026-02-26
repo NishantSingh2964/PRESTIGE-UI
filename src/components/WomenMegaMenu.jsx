@@ -14,7 +14,7 @@ const WomenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     {/* Column 1: Bags */}
                     <div className="space-y-6 tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black uppercase">Bags</h3>
-                        <ul className="space-y-4">
+                        <ul className="space-y-2 font-light">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Shoulder bags</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Mini bags</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Business bags</a></li>
@@ -26,7 +26,7 @@ const WomenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     {/* Column 2: Popular Models */}
                     <div className="space-y-6 tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black uppercase">Popular models</h3>
-                        <ul className="space-y-4">
+                        <ul className="space-y-2 font-light">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Le Mini Dalia</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Le Nova</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Le Dino</a></li>
@@ -37,7 +37,7 @@ const WomenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     {/* Column 3: Popular Colors */}
                     <div className="space-y-6 tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black uppercase">Popular colors</h3>
-                        <ul className="space-y-4">
+                        <ul className="space-y-2 font-light">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Black</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Camel</a></li>
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-black transition-colors">Almond Green</a></li>

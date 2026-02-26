@@ -106,7 +106,7 @@ const Navbar = () => {
                         >
                             <a href="#" className="text-[11px] tracking-[0.25em] uppercase font-light">Men</a>
                         </div>
-                        <a href="#" className="text-[11px] tracking-[0.25em] uppercase font-light">About</a>
+                        <a href="#" className="text-[11px] tracking-[0.25em] uppercase font-light">Blog</a>
                         <div
                             className="h-full flex items-center cursor-pointer"
                             onMouseEnter={() => {
@@ -114,7 +114,7 @@ const Navbar = () => {
                                 setIsBlogMenuOpen(true); // Hover on Blog now opens the menu
                             }}
                         >
-                            <a href="#" className="text-[11px] tracking-[0.25em] uppercase font-light">Blog</a>
+                            <a href="#" className="text-[11px] tracking-[0.25em] uppercase font-light">About</a>
                         </div>
                     </div>
                 </div>

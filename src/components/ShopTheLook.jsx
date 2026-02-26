@@ -79,9 +79,8 @@ const ShopTheLook = () => {
                 <div className="hidden md:block relative">
                     {/* Left Arrow - Positioned outside with shadow */}
                     <button
-                        onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
-                        disabled={currentSlide === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10 shadow-md"
+                        onClick={() => setCurrentSlide(prev => (prev - 1 + looks.length) % looks.length)}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
                     >
                         <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
                             <path d="M11 1 3 9l8 8" stroke="currentColor" strokeLinecap="square" />
@@ -98,15 +97,12 @@ const ShopTheLook = () => {
                                 className="w-full h-full object-cover"
                             />
 
-                            {/* Smaller Hotspot Markers */}
+                            {/* Redesigned Hotspot Markers */}
                             {currentLook.hotspots.map((hotspot, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setActiveHotspot(index)}
-                                    className={`absolute w-8 h-8 rounded-full bg-white border transition-all duration-300 hover:scale-110 ${activeHotspot === index
-                                        ? 'border-black scale-110'
-                                        : 'border-black/15'
-                                        }`}
+                                    className={`absolute group p-4 -m-4 transition-all duration-300 z-10`}
                                     style={{
                                         top: hotspot.top,
                                         left: hotspot.left,
@@ -114,10 +110,16 @@ const ShopTheLook = () => {
                                     }}
                                     aria-label={`View product ${index + 1}`}
                                 >
+                                    {/* Pulse Effect */}
                                     <span className="absolute inset-0 flex items-center justify-center">
-                                        <span className={`w-1.5 h-1.5 rounded-full transition-colors ${activeHotspot === index ? 'bg-black' : 'bg-black/30'
-                                            }`} />
+                                        <span className={`w-10 h-10 rounded-full bg-white/20 animate-ping opacity-75 ${activeHotspot === index ? 'block' : 'hidden'}`} />
                                     </span>
+
+                                    {/* Outer Ring */}
+                                    <div className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${activeHotspot === index ? 'bg-white/40 scale-110' : 'bg-white/20 hover:bg-white/30'}`}>
+                                        {/* Inner Solid Dot */}
+                                        <div className="w-2.5 h-2.5 rounded-full bg-white shadow-sm" />
+                                    </div>
                                 </button>
                             ))}
                         </div>
@@ -186,9 +188,8 @@ const ShopTheLook = () => {
 
                     {/* Right Arrow - Positioned outside with shadow */}
                     <button
-                        onClick={() => setCurrentSlide(prev => Math.min(looks.length - 1, prev + 1))}
-                        disabled={currentSlide === looks.length - 1}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10 shadow-md"
+                        onClick={() => setCurrentSlide(prev => (prev + 1) % looks.length)}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
                     >
                         <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
                             <path d="m5 17 8-8-8-8" stroke="currentColor" strokeLinecap="square" />
@@ -206,25 +207,21 @@ const ShopTheLook = () => {
                             className="w-full h-full object-cover"
                         />
 
-                        {/* Hotspot Markers */}
+                        {/* Redesigned Hotspot Markers for Mobile */}
                         {currentLook.hotspots.map((hotspot, index) => (
                             <button
                                 key={index}
                                 onClick={() => setActiveHotspot(index)}
-                                className={`absolute w-8 h-8 rounded-full bg-white border transition-all duration-300 ${activeHotspot === index
-                                    ? 'border-black scale-110'
-                                    : 'border-black/15'
-                                    }`}
+                                className={`absolute group p-4 -m-4 transition-all duration-300 z-10`}
                                 style={{
                                     top: hotspot.top,
                                     left: hotspot.left,
                                     transform: 'translate(-50%, -50%)'
                                 }}
                             >
-                                <span className={`absolute inset-0 flex items-center justify-center`}>
-                                    <span className={`w-1.5 h-1.5 rounded-full ${activeHotspot === index ? 'bg-black' : 'bg-black/30'
-                                        }`} />
-                                </span>
+                                <div className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${activeHotspot === index ? 'bg-white/40 scale-110' : 'bg-white/20'}`}>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-white shadow-sm" />
+                                </div>
                             </button>
                         ))}
                     </div>

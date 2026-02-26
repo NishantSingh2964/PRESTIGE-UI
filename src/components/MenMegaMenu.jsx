@@ -12,7 +12,7 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                 {/* Links Columns */}
                 <div className="flex-1 grid grid-cols-3 gap-8">
                     {/* Column 1: Bags */}
-                    <div className="space-y-6 tracking-[0.025em]">
+                    <div className="space-y-2 font-light tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Bags</h3>
                         <ul className="space-y-4">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Business bags</a></li>
@@ -22,7 +22,7 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     </div>
 
                     {/* Column 2: Small leather goods */}
-                    <div className="space-y-6 tracking-[0.025em]">
+                    <div className="space-y-2 font-light tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Small leather goods</h3>
                         <ul className="space-y-4">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Wallet</a></li>
@@ -32,7 +32,7 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     </div>
 
                     {/* Column 3: Popular Colors */}
-                    <div className="space-y-6 tracking-[0.025em]">
+                    <div className="space-y-2 font-light tracking-[0.025em]">
                         <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Popular colors</h3>
                         <ul className="space-y-4">
                             <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Black</a></li>
