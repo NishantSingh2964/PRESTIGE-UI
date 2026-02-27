@@ -52,11 +52,12 @@ const Timeline = () => {
         <section className="bg-[#efefef] md:pt-24 pb-4 md:pb-12 overflow-hidden">
             <div className="container mx-auto px-0 md:px-12 lg:px-24 max-w-7xl">
                 <div className="relative flex flex-col md:flex-row items-stretch bg-white shadow-sm overflow-hidden h-[600px] md:h-[500px]">
-                    {/* Left: Image Column (Sliding Track) */}
+
+                    {/* Left: Image Column (Ultra Smooth Sliding Track) */}
                     <div className="absolute inset-0 md:relative md:w-1/2 overflow-hidden bg-gray-100">
                         <div
-                            className="flex h-full transition-transform duration-300 ease-in-out"
-                            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                            className="flex h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
+                            style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}
                         >
                             {timelineData.map((item, index) => (
                                 <div key={`image-${index}`} className="h-full w-full flex-shrink-0 relative">
@@ -65,14 +66,13 @@ const Timeline = () => {
                                         alt={item.title}
                                         className="h-full w-full object-cover"
                                     />
-                                    {/* Mobile-only dark overlay for readability */}
                                     <div className="absolute inset-0 bg-black/40 md:hidden" />
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Right: Content Column (Fading Active Item) */}
+                    {/* Right: Content Column */}
                     <div className="relative z-10 w-full h-full md:w-1/2 flex items-center justify-center md:items-stretch md:justify-end p-4 md:p-0">
                         <div className="bg-transparent md:bg-transparent p-0 md:p-10 shadow-none md:shadow-none w-full max-w-[320px] md:max-w-none text-center md:text-left flex flex-col justify-center md:justify-end">
                             <div key={`content-${activeIndex}`} className="animate-slow-fade-in">
@@ -90,7 +90,7 @@ const Timeline = () => {
                     </div>
                 </div>
 
-                {/* Navigation: Year Switcher - Scrollable on mobile */}
+                {/* Navigation */}
                 <div className="mt-10 md:mt-12 px-6 md:px-0">
                     <div className="flex overflow-x-auto snap-x scrollbar-hide gap-8 md:gap-10 justify-start md:justify-center">
                         {timelineData.map((item, index) => (
@@ -98,7 +98,7 @@ const Timeline = () => {
                                 key={index}
                                 onClick={() => setActiveIndex(index)}
                                 className={`text-[13px] tracking-[0.2em] transition-all duration-300 transform origin-bottom flex-shrink-0 snap-center border-b
-    ${activeIndex === index
+                                ${activeIndex === index
                                         ? 'text-[#1c1c1c] font-medium scale-125 border-[#1c1c1c]'
                                         : 'text-[#1c1c1c]/40 hover:text-[#1c1c1c]/70 scale-100 border-transparent'
                                     }`}
