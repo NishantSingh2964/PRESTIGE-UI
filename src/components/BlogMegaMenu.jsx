@@ -7,7 +7,7 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
             onMouseLeave={onMouseLeave}
             className={`absolute top-[75px] left-0 w-full bg-white border-b border-gray-100 shadow-xl transition-all duration-300 overflow-hidden ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}
-            style={{ minHeight: '70vh' }} // Constrain height to 60vh (just bigger than half)
+            style={{ maxHeight: '80vh' }} // Constrain height to 60vh (just bigger than half)
         >
             {/* Reduced padding to py-12 back to match others, and added h-full/overflow-y-hidden */}
             <div className="w-full max-w-[1480px] mx-auto px-12 py-12">
@@ -63,6 +63,7 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                                 <p className="text-[10px] tracking-[0.1em] uppercase text-gray-500 font-light">of léo et violette</p>
                             </div>
                         </div>
+
                         {/* Commitments Promo */}
                         <div className="group cursor-pointer">
                             <div className="aspect-[3/2] overflow-hidden mb-4">
