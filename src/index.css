@@ -116,6 +116,22 @@
     @apply scale-x-0;
     transform-origin: right;
   }
+
+  .animated-underline {
+    @apply relative inline-block pb-0.5;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[1px] bg-black/30 transition-transform duration-300;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .animated-underline:hover::after {
+    transform: scaleX(0);
+    @apply bg-black;
+  }
 }
 
 @layer utilities {

@@ -47,11 +47,11 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                         </div>
                     </div>
 
-                    {/* Promo Section - Using aspect-[1/1] for square images */}
-                    <div className="col-span-8 grid grid-cols-2 gap-10">
+                    {/* Promo Section - Using aspect-[3/4] for portrait images */}
+                    <div className="col-span-7 grid grid-cols-2 gap-10">
                         {/* Story Promo */}
                         <div className="group cursor-pointer">
-                            <div className="aspect-[1/1] overflow-hidden mb-4">
+                            <div className="aspect-[3/4] overflow-hidden mb-4">
                                 <img
                                     src="//prestige-theme-allure.myshopify.com/cdn/shop/files/mega-menu-image-story.jpg?v=1681204836&width=650"
                                     alt="Our Story"
@@ -66,7 +66,7 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
 
                         {/* Commitments Promo */}
                         <div className="group cursor-pointer">
-                            <div className="aspect-[1/1] overflow-hidden mb-4">
+                            <div className="aspect-[3/4] overflow-hidden mb-4">
                                 <img
                                     src="//prestige-theme-allure.myshopify.com/cdn/shop/files/mega-menu-image-commitments.jpg?v=1681204872&width=650"
                                     alt="Our Commitments"

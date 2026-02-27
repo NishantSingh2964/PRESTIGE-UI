@@ -186,7 +186,7 @@ const WeekendCollection = () => {
                                     />
 
                                     {/* Quick Add */}
-                                    <div className="absolute bottom-0 right-0 p-4 z-10">
+                                    <div className="absolute bottom-0 right-0 p-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <button className="w-8 h-8 md:w-10 md:h-10 bg-white shadow-sm flex items-center justify-center btn-hover-white">
                                             <svg
                                                 className="w-4 h-4 transform rotate-90 text-black"

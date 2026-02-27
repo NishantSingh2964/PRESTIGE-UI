@@ -8,7 +8,7 @@ const Midbanner = () => {
                 <img
                     src="https://prestige-theme-allure.myshopify.com/cdn/shop/files/Image_with_text_overlay_-_Desktop_-_home.jpg?v=1680765088&width=2500"
                     alt="New Product - Le Backpack"
-                    className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                 />
                 {/* Subtle overlay for text readability */}

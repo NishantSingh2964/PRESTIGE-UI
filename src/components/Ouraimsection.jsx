@@ -24,13 +24,13 @@ const Ouraimsection = () => {
                         <div className="flex gap-8 md:gap-10 items-center">
                             <a
                                 href="/pages/about-us"
-                                className="text-[11px] md:text-[12px] tracking-[0.18em] uppercase font-light border-b hover:border-none border-black/30 hover:border-black transition-all duration-300 pb-0.5"
+                                className="text-[11px] md:text-[12px] tracking-[0.18em] uppercase font-light animated-underline transition-all duration-300"
                             >
                                 Our story
                             </a>
                             <a
                                 href="/pages/commitments"
-                                className="text-[11px] md:text-[12px] tracking-[0.18em] uppercase font-light border-b hover:border-none border-black/30 hover:border-black transition-all duration-300 pb-0.5"
+                                className="text-[11px] md:text-[12px] tracking-[0.18em] uppercase font-light animated-underline transition-all duration-300"
                             >
                                 Commitments
                             </a>
