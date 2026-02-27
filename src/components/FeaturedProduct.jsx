@@ -117,7 +117,7 @@ const FeaturedProduct = () => {
                                     Color: <span className="font-normal tracking-normal">Camel Liégé</span>
                                 </p>
                                 <div className="flex gap-4">
-                                    <div className="w-9 h-9 bg-[#a67c52] border border-black/5 cursor-pointer ring-1 ring-offset-4 ring-transparent hover:ring-black/10 transition-all active:scale-95" />
+                                    <div className="w-7 h-7 bg-[#A0522D] border border-black/5 cursor-pointer ring-1 ring-offset-4 ring-transparent ring-black transition-all active:scale-95" />
                                 </div>
                             </div>
 
@@ -145,7 +145,7 @@ const FeaturedProduct = () => {
                             </div>
 
                             {/* Add to Cart Button */}
-                            <button className="w-full btn-hover-dark h-[40px] text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-light shadow-sm active:translate-y-[1px]">
+                            <button className="w-full btn-premium-slide-dark h-[40px] text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-light shadow-sm active:translate-y-[1px]">
                                 Add to cart
                             </button>
                         </div>

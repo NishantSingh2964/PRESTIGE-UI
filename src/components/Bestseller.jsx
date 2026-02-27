@@ -202,8 +202,8 @@ const Bestseller = () => {
                                     />
 
                                     {/* Quick Add Button */}
-                                    <button className="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 btn-hover-white bg-white">
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <button className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 btn-hover-black bg-white group/btn">
+                                        <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" />
                                         </svg>
                                     </button>
@@ -223,11 +223,10 @@ const Bestseller = () => {
                     </div>
                 </div>
 
-                {/* Footer Button */}
                 <div className="mt-16 md:mt-12 flex justify-center">
                     <a
                         href="#"
-                        className="py-3 btn-hover-dark bg-black text-white text-[11px] md:text-[12px] tracking-[0.2em] uppercase font-light min-w-[220px] md:min-w-[220px] text-center"
+                        className="py-3 btn-premium-slide bg-transparent text-black text-[11px] md:text-[12px] tracking-[0.2em] uppercase font-light min-w-[220px] md:min-w-[220px] text-center"
                     >
                         All {activeTab.toLowerCase()}'s bags
                     </a>

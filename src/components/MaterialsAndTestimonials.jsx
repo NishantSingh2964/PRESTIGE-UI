@@ -79,7 +79,7 @@ const MaterialsAndTestimonials = () => {
                                 onClick={() => setActiveIndex(index)}
                                 className={`transition-all duration-500 transform ${activeIndex === index
                                     ? 'opacity-100 scale-110'
-                                    : 'opacity-30 grayscale scale-100 hover:opacity-60 hover:grayscale-0'
+                                    : 'opacity-30 grayscale scale-100'
                                     }`}
                                 aria-label={`View testimonial from ${testimonial.name}`}
                             >

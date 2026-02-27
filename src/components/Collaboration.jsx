@@ -19,7 +19,7 @@ const Collaboration = () => {
                         <div>
                             <a
                                 href="/pages/collaboration"
-                                className="inline-block btn-hover-dark px-8 py-3 text-[10px] uppercase tracking-[0.2em] font-medium"
+                                className="inline-block btn-premium-slide bg-transparent text-black px-8 py-3 text-[10px] uppercase tracking-[0.2em] font-medium"
                             >
                                 Discover
                             </a>

@@ -1,5 +1,84 @@
 import React, { useState, useEffect } from 'react';
 
+const RollingDigit = ({ digit }) => {
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [displayIndex, setDisplayIndex] = useState(9 - parseInt(digit));
+    const [prevDigit, setPrevDigit] = useState(digit);
+
+    const digitStrip = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9];
+
+    useEffect(() => {
+        if (digit !== prevDigit) {
+            const newDigit = parseInt(digit);
+            const oldDigit = parseInt(prevDigit);
+
+            // If it's a normal countdown (e.g., 9 -> 8)
+            if (newDigit < oldDigit) {
+                setDisplayIndex(9 - newDigit);
+            }
+            // If it's a wrap-around (e.g., 0 -> 9)
+            else if (newDigit > oldDigit) {
+                // Animate to the last '9' in our strip (index 10)
+                setDisplayIndex(10);
+
+                // Then snap back to the first '9' (index 0) without animation
+                setTimeout(() => {
+                    setIsAnimating(false);
+                    setDisplayIndex(0);
+                    // Force a tiny reflow/delay before re-enabling animation if needed
+                    // but since the next change will usually be a decrease, we're fine
+                }, 600);
+                setIsAnimating(true);
+            }
+
+            setPrevDigit(digit);
+            setIsAnimating(true);
+
+            const timer = setTimeout(() => {
+                setIsAnimating(false);
+            }, 600);
+            return () => clearTimeout(timer);
+        }
+    }, [digit, prevDigit]);
+
+    return (
+        <div className="relative h-[1.2em] w-[0.6em] md:w-[0.7em] overflow-hidden">
+            <div
+                className={`flex flex-col items-center transition-transform duration-600 ease-in-out`}
+                style={{
+                    transform: `translateY(-${(displayIndex / 11) * 100}%)`,
+                    transition: isAnimating ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                }}
+            >
+                {digitStrip.map((d, i) => (
+                    <div key={i} className="h-[1.2em] flex items-center justify-center flex-shrink-0">
+                        {d}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+const CountdownUnit = ({ value, label }) => {
+    const digits = String(value).padStart(2, '0').split('');
+
+    return (
+        <div className="flex flex-col items-center">
+            <div className="text-white text-lg md:text-2xl lg:text-3xl font-light text-center">
+                <div className="flex justify-center gap-0.5">
+                    {digits.map((d, i) => (
+                        <RollingDigit key={i} digit={d} />
+                    ))}
+                </div>
+            </div>
+            <span className="text-white text-[7px] md:text-[10px] uppercase tracking-[0.2em] font-medium mt-3">
+                {label}
+            </span>
+        </div>
+    );
+};
+
 const CountdownSale = () => {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -79,52 +158,14 @@ const CountdownSale = () => {
                 </div>
 
                 {/* Right: Countdown Timer */}
-                <div className="flex items-center gap-2 md:gap-1">
-                    {/* Days */}
-                    <div className="flex flex-col items-center">
-                        <div className="text-white text-2xl md:text-3xl lg:text-4xl font-light px-3 md:px-4 py-2 md:py-3 min-w-[50px] md:min-w-[75px] text-center">
-                            {formatNumber(timeLeft.days)}
-                        </div>
-                        <span className="text-white text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-extralight mt-1">
-                            Day
-                        </span>
-                    </div>
-
-                    <span className="text-white text-xl md:text-3xl font-light">:</span>
-
-                    {/* Hours */}
-                    <div className="flex flex-col items-center">
-                        <div className="text-white text-2xl md:text-3xl lg:text-4xl font-light px-3 md:px-4 py-2 md:py-3 min-w-[50px] md:min-w-[75px] text-center">
-                            {formatNumber(timeLeft.hours)}
-                        </div>
-                        <span className="text-white text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-extralight mt-1">
-                            Hours
-                        </span>
-                    </div>
-
-                    <span className="text-white text-xl md:text-3xl font-light">:</span>
-
-                    {/* Minutes */}
-                    <div className="flex flex-col items-center">
-                        <div className="text-white text-2xl md:text-3xl lg:text-4xl font-light px-3 md:px-4 py-2 md:py-3 min-w-[50px] md:min-w-[75px] text-center">
-                            {formatNumber(timeLeft.minutes)}
-                        </div>
-                        <span className="text-white text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-extralight mt-1">
-                            Min
-                        </span>
-                    </div>
-
-                    <span className="text-white text-xl md:text-3xl font-light">:</span>
-
-                    {/* Seconds */}
-                    <div className="flex flex-col items-center">
-                        <div className="text-white text-2xl md:text-3xl lg:text-4xl font-light px-3 md:px-4 py-2 md:py-3 min-w-[50px] md:min-w-[75px] text-center">
-                            {formatNumber(timeLeft.seconds)}
-                        </div>
-                        <span className="text-white text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-extralight mt-1">
-                            Sec
-                        </span>
-                    </div>
+                <div className="flex items-center gap-2 md:gap-4 lg:gap-6">
+                    <CountdownUnit value={timeLeft.days} label="Days" />
+                    <div className="text-white text-lg md:text-2xl font-light">:</div>
+                    <CountdownUnit value={timeLeft.hours} label="Hours" />
+                    <div className="text-white text-lg md:text-2xl font-light">:</div>
+                    <CountdownUnit value={timeLeft.minutes} label="Min" />
+                    <div className="text-white text-lg md:text-2xl font-light">:</div>
+                    <CountdownUnit value={timeLeft.seconds} label="Sec" />
                 </div>
             </div>
         </section>

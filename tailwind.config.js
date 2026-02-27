@@ -9,6 +9,15 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      keyframes: {
+        slowFadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'slow-fade-in': 'slowFadeIn 0.3s ease-in-out forwards',
+      },
     },
   },
   plugins: [],

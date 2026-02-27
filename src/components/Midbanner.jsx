@@ -26,7 +26,7 @@ const Midbanner = () => {
                     </h2>
                     <a
                         href="#"
-                        className="inline-block px-6 py-3.5 md:px-8 md:py-3 btn-hover-white text-[13px] tracking-[0.18em] uppercase font-extralight"
+                        className="inline-block px-6 py-3.5 md:px-8 md:py-3 btn-premium-slide-white text-white text-[13px] tracking-[0.18em] uppercase font-extralight"
                     >
                         Shop
                     </a>

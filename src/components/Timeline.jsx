@@ -52,23 +52,30 @@ const Timeline = () => {
         <section className="bg-[#efefef] md:pt-24 pb-4 md:pb-12 overflow-hidden">
             <div className="container mx-auto px-0 md:px-12 lg:px-24 max-w-7xl">
                 <div className="relative flex flex-col md:flex-row items-stretch bg-white shadow-sm overflow-hidden h-[600px] md:h-[500px]">
-                    {/* Left: Image Column (Absolute on mobile, relative on desktop) */}
+                    {/* Left: Image Column (Sliding Track) */}
                     <div className="absolute inset-0 md:relative md:w-1/2 overflow-hidden bg-gray-100">
-                        <div key={`image-${activeIndex}`} className="h-full w-full animate-in fade-in zoom-in-95 duration-1000">
-                            <img
-                                src={timelineData[activeIndex].image}
-                                alt={timelineData[activeIndex].title}
-                                className="h-full w-full object-cover"
-                            />
-                            {/* Mobile-only dark overlay for readability */}
-                            <div className="absolute inset-0 bg-black/40 md:hidden" />
+                        <div
+                            className="flex h-full transition-transform duration-300 ease-in-out"
+                            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                        >
+                            {timelineData.map((item, index) => (
+                                <div key={`image-${index}`} className="h-full w-full flex-shrink-0 relative">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="h-full w-full object-cover"
+                                    />
+                                    {/* Mobile-only dark overlay for readability */}
+                                    <div className="absolute inset-0 bg-black/40 md:hidden" />
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Right: Content Column (Overlay on mobile, column on desktop) */}
+                    {/* Right: Content Column (Fading Active Item) */}
                     <div className="relative z-10 w-full h-full md:w-1/2 flex items-center justify-center md:items-stretch md:justify-end p-4 md:p-0">
                         <div className="bg-transparent md:bg-transparent p-0 md:p-10 shadow-none md:shadow-none w-full max-w-[320px] md:max-w-none text-center md:text-left flex flex-col justify-center md:justify-end">
-                            <div key={`content-${activeIndex}`} className="animate-in fade-in slide-in-from-bottom-4 md:slide-in-from-right-4 duration-700">
+                            <div key={`content-${activeIndex}`} className="animate-slow-fade-in">
                                 <p className="text-[8px] md:text-[11px] uppercase tracking-[0.1em] font-bold text-white/60 md:text-[#1c1c1c]/60 mb-2 md:mb-3">
                                     {timelineData[activeIndex].tag}
                                 </p>

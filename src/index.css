@@ -39,6 +39,83 @@
   .btn-hover-black-hero:hover {
     @apply text-white border-white;
   }
+
+  .btn-premium-slide {
+    @apply relative overflow-hidden transition-all duration-500 z-10 border border-black;
+  }
+
+  .btn-premium-slide::before {
+    content: '';
+    @apply absolute inset-0 bg-black transform scale-x-0 -z-10 transition-transform duration-500;
+    transform-origin: right;
+  }
+
+  .btn-premium-slide:hover {
+    @apply text-white;
+  }
+
+  .btn-premium-slide:hover::before {
+    @apply scale-x-100;
+    transform-origin: left;
+  }
+
+  .btn-premium-slide-white {
+    @apply relative overflow-hidden transition-all duration-500 z-10 border border-white;
+  }
+
+  .btn-premium-slide-white::before {
+    content: '';
+    @apply absolute inset-0 bg-white transform scale-x-0 -z-10 transition-transform duration-500;
+    transform-origin: right;
+  }
+
+  .btn-premium-slide-white:hover {
+    @apply text-black;
+  }
+
+  .btn-premium-slide-white:hover::before {
+    @apply scale-x-100;
+    transform-origin: left;
+  }
+
+  .btn-premium-slide-dark {
+    @apply relative overflow-hidden transition-all duration-500 z-10 bg-black text-white border border-black;
+  }
+
+  .btn-premium-slide-dark::before {
+    content: '';
+    @apply absolute inset-0 bg-white transform scale-x-0 -z-10 transition-transform duration-500;
+    transform-origin: right;
+  }
+
+  .btn-premium-slide-dark:hover {
+    @apply text-black;
+  }
+
+  .btn-premium-slide-dark:hover::before {
+    @apply scale-x-100;
+    transform-origin: left;
+  }
+
+  /* White to Transparent slide */
+  .btn-premium-slide-reveal {
+    @apply relative overflow-hidden transition-all duration-500 z-10 bg-transparent text-black border border-white;
+  }
+
+  .btn-premium-slide-reveal::before {
+    content: '';
+    @apply absolute inset-0 bg-white transform scale-x-100 -z-10 transition-transform duration-500;
+    transform-origin: left;
+  }
+
+  .btn-premium-slide-reveal:hover {
+    @apply text-white;
+  }
+
+  .btn-premium-slide-reveal:hover::before {
+    @apply scale-x-0;
+    transform-origin: right;
+  }
 }
 
 @layer utilities {

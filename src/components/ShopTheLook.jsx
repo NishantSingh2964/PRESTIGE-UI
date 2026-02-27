@@ -165,7 +165,7 @@ const ShopTheLook = () => {
 
                                 {/* View Product Button - Refined styling */}
                                 <div className="mb-6">
-                                    <button className="btn-hover-dark py-3 px-10 text-[10px] uppercase tracking-[0.2em] font-medium">
+                                    <button className="btn-premium-slide bg-transparent text-black py-3 px-10 text-[10px] uppercase tracking-[0.2em] font-medium">
                                         View Product
                                     </button>
                                 </div>
@@ -227,7 +227,7 @@ const ShopTheLook = () => {
                     </div>
 
                     {/* View Products Button */}
-                    <button className="w-full btn-hover-dark py-4 px-8 text-[11px] uppercase tracking-[0.15em] font-medium">
+                    <button className="w-full btn-premium-slide bg-transparent text-black py-4 px-8 text-[11px] uppercase tracking-[0.15em] font-medium">
                         View Products
                     </button>
                 </div>

@@ -13,7 +13,7 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
             <div className="w-full max-w-[1480px] mx-auto px-12 py-12">
                 <div className="grid grid-cols-12 gap-12">
                     {/* Link Columns */}
-                    <div className="col-span-4 grid grid-cols-2 gap-8">
+                    <div className="col-span-3 col-start-2 grid grid-cols-2 gap-8">
                         {/* Discover Column */}
                         <div className="flex flex-col gap-6 tracking-[0.025em]">
                             <h3 className="text-[11px] tracking-[0.2em] font-medium text-gray-500 uppercase">Discover</h3>
@@ -47,15 +47,15 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                         </div>
                     </div>
 
-                    {/* Promo Section - Using aspect-[3/2] to keep height in check */}
+                    {/* Promo Section - Using aspect-[1/1] for square images */}
                     <div className="col-span-8 grid grid-cols-2 gap-10">
                         {/* Story Promo */}
                         <div className="group cursor-pointer">
-                            <div className="aspect-[3/2] overflow-hidden mb-4">
+                            <div className="aspect-[1/1] overflow-hidden mb-4">
                                 <img
                                     src="//prestige-theme-allure.myshopify.com/cdn/shop/files/mega-menu-image-story.jpg?v=1681204836&width=650"
                                     alt="Our Story"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105"
                                 />
                             </div>
                             <div className="text-center flex flex-col gap-1">
@@ -66,11 +66,11 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
 
                         {/* Commitments Promo */}
                         <div className="group cursor-pointer">
-                            <div className="aspect-[3/2] overflow-hidden mb-4">
+                            <div className="aspect-[1/1] overflow-hidden mb-4">
                                 <img
                                     src="//prestige-theme-allure.myshopify.com/cdn/shop/files/mega-menu-image-commitments.jpg?v=1681204872&width=650"
                                     alt="Our Commitments"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105"
                                 />
                             </div>
                             <div className="text-center flex flex-col gap-1">

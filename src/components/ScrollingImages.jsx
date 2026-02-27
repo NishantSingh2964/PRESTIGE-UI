@@ -109,19 +109,19 @@ const ScrollingImages = () => {
                             <div
                                 key={index}
                                 ref={el => itemRefs.current[index] = el}
-                                className="h-[100vh] flex items-center justify-center p-12 lg:p-24 transition-all duration-200 ease-out"
+                                className="h-[90vh] flex items-center justify-center p-6 lg:p-10 transition-all duration-200 ease-out"
                                 style={{ opacity: 0 }}
                             >
                                 <div className="max-w-md w-full text-center">
-                                    <p className="text-[12px] tracking-[0.2em] uppercase font-extralight text-white/70 mb-5">
+                                    <p className="text-[12px] tracking-[0.2em] uppercase font-extralight text-white/70 mb-3">
                                         {item.number}
                                     </p>
 
-                                    <h3 className="text-[15px] md:text-[20px] lg:text-[25px] tracking-[0.1em] uppercase font-extralight text-white mb-8 leading-tight">
+                                    <h3 className="text-[15px] md:text-[20px] lg:text-[25px] tracking-[0.1em] uppercase font-extralight text-white mb-5 leading-tight">
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-[14px] md:text-[15px] leading-[1.7] font-extralight text-white/85 mb-10 max-w-sm mx-auto">
+                                    <p className="text-[14px] md:text-[15px] leading-[1.7] font-extralight text-white/85 mb-7 max-w-sm mx-auto">
                                         {item.text}
                                     </p>
 

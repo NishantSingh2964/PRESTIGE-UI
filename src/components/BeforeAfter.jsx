@@ -115,7 +115,7 @@ const BeforeAfter = () => {
                         style={{ left: `${sliderPosition}%` }}
                     >
                         <div className="w-[1px] h-full bg-white" />
-                        <div className="absolute w-12 h-12 bg-white rounded-full shadow-2xl flex items-center justify-center cursor-grab active:cursor-grabbing">
+                        <div className="absolute w-12 h-12 bg-white rounded-full shadow-2xl flex items-center justify-center">
                             <svg width="34" height="34" viewBox="0 0 50 50" fill="none">
                                 <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000" strokeWidth="1.5" strokeLinecap="square"></path>
                             </svg>
