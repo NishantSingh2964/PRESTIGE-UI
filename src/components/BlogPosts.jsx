@@ -29,7 +29,7 @@ const BlogCard = ({ post }) => {
                     <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out group-hover:scale-110"
                     />
                 </a>
             </div>

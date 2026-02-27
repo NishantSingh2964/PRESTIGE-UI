@@ -80,11 +80,16 @@ const ShopTheLook = () => {
                     {/* Left Arrow - Positioned outside with shadow */}
                     <button
                         onClick={() => setCurrentSlide(prev => (prev - 1 + looks.length) % looks.length)}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md group hover-arrow-slide"
                     >
-                        <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
-                            <path d="M11 1 3 9l8 8" stroke="currentColor" strokeLinecap="square" />
-                        </svg>
+                        <div className="arrow-container flex items-center justify-center w-full h-full">
+                            <svg className="arrow-main" width="16" height="16" viewBox="0 0 16 18" fill="none">
+                                <path d="M11 1 3 9l8 8" stroke="currentColor" strokeLinecap="square" />
+                            </svg>
+                            <svg className="arrow-back" width="16" height="16" viewBox="0 0 16 18" fill="none">
+                                <path d="M11 1 3 9l8 8" stroke="currentColor" strokeLinecap="square" />
+                            </svg>
+                        </div>
                     </button>
 
                     {/* Main Content Grid - Reduced gap */}
@@ -92,9 +97,10 @@ const ShopTheLook = () => {
                         {/* Left: Lifestyle Image with Hotspots (Larger) - Added top padding */}
                         <div className="relative aspect-square pt-8">
                             <img
+                                key={`lifestyle-${currentSlide}`}
                                 src={currentLook.image}
                                 alt="Shop the look"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover animate-fade-in-left"
                             />
 
                             {/* Redesigned Hotspot Markers */}
@@ -125,7 +131,10 @@ const ShopTheLook = () => {
                         </div>
 
                         {/* Right: Product Details - Refined to match reference */}
-                        <div className="flex flex-col items-start justify-center gap-0 w-full relative">
+                        <div
+                            key={`product-details-${currentSlide}-${activeHotspot}`}
+                            className="flex flex-col items-start justify-center gap-0 w-full relative animate-fade-in-up"
+                        >
                             {/* Badge - Positioned with absolute for precise control */}
                             {currentProduct.badge && (
                                 <div className="absolute top-8 left-0 w-full">
@@ -189,11 +198,16 @@ const ShopTheLook = () => {
                     {/* Right Arrow - Positioned outside with shadow */}
                     <button
                         onClick={() => setCurrentSlide(prev => (prev + 1) % looks.length)}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center hover:border-black/30 transition-colors z-10 shadow-md group hover-arrow-slide"
                     >
-                        <svg width="16" height="16" viewBox="0 0 16 18" fill="none">
-                            <path d="m5 17 8-8-8-8" stroke="currentColor" strokeLinecap="square" />
-                        </svg>
+                        <div className="arrow-container flex items-center justify-center w-full h-full">
+                            <svg className="arrow-main" width="16" height="16" viewBox="0 0 16 18" fill="none">
+                                <path d="m5 17 8-8-8-8" stroke="currentColor" strokeLinecap="square" />
+                            </svg>
+                            <svg className="arrow-back" width="16" height="16" viewBox="0 0 16 18" fill="none">
+                                <path d="m5 17 8-8-8-8" stroke="currentColor" strokeLinecap="square" />
+                            </svg>
+                        </div>
                     </button>
                 </div>
 

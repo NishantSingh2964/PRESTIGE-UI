@@ -176,3 +176,64 @@
 .animate-scroll-right {
   animation: scroll-right 30s linear infinite;
 }
+
+/* Shop The Look & Product Appearance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+/* Arrow Slide Animation */
+.arrow-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow-main {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.arrow-back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-150%);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.hover-arrow-slide:hover .arrow-main {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.hover-arrow-slide:hover .arrow-back {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}

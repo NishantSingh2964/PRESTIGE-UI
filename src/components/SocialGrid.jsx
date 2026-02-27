@@ -155,12 +155,12 @@ const SocialSection = () => {
                     {socialImages.map((image, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[70%] sm:w-[45%] md:w-auto aspect-square snap-start overflow-hidden bg-white"
+                            className="shrink-0 w-[70%] sm:w-[45%] md:w-auto aspect-square snap-start overflow-hidden bg-white group"
                         >
                             <img
                                 src={image}
                                 alt={`Social feed ${index + 1}`}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out group-hover:scale-110"
                             />
                         </div>
                     ))}

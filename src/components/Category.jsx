@@ -43,7 +43,7 @@ const Category = () => {
                                 <img
                                     src={cat.image}
                                     alt={cat.title}
-                                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out group-hover:scale-110"
                                     loading="lazy"
                                 />
                             </div>

@@ -43,11 +43,11 @@ const Bestseller = () => {
             },
             {
                 id: 5,
-                title: 'Le Petit Dalia Black Liégé',
-                price: '$320.00',
-                image: 'https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Mini-Dalia-Lisse-Noir-01.webp?v=1677224916&width=1000',
-                secondaryImage: 'https://prestige-theme-allure.myshopify.com/cdn/shop/products/Le-Mini-Dalia-Lisse-Noir-04.webp?v=1677224925&width=1000',
-                badge: 'LIMITED EDITION'
+                title: 'Le Dalia Ivory Liégé',
+                price: '$380.00',
+                image: 'https://prestige-theme-allure.myshopify.com/cdn/shop/products/le-tuilli-ivoire1_de480f07-0e23-4872-839f-0503d7cccb76.jpg?v=1676886890&width=1000',
+                secondaryImage: 'https://prestige-theme-allure.myshopify.com/cdn/shop/products/le-tuilli-ivoire1_de480f07-0e23-4872-839f-0503d7cccb76.jpg?v=1676886890&width=1000',
+                badge: 'NEW'
             }
         ],
         Men: [

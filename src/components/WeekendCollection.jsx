@@ -64,7 +64,7 @@ const WeekendCollection = () => {
     const checkScroll = () => {
         if (scrollRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-            setCanScrollLeft(scrollLeft > 5);
+            setCanScrollLeft(scrollLeft > 50);
             setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
         }
     };
@@ -73,13 +73,14 @@ const WeekendCollection = () => {
         const current = scrollRef.current;
         if (current) {
             current.addEventListener('scroll', checkScroll);
-            checkScroll(); // Initial check
-        }
-        return () => {
-            if (current) {
+
+            // Added small delay to ensure layout has shifted/settled before initial check
+            const timeoutId = setTimeout(checkScroll, 100);
+            return () => {
                 current.removeEventListener('scroll', checkScroll);
-            }
-        };
+                clearTimeout(timeoutId);
+            };
+        }
     }, []);
 
     return (
@@ -187,9 +188,9 @@ const WeekendCollection = () => {
 
                                     {/* Quick Add */}
                                     <div className="absolute bottom-0 right-0 p-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button className="w-8 h-8 md:w-10 md:h-10 bg-white shadow-sm flex items-center justify-center btn-hover-white">
+                                        <button className="w-8 h-8 md:w-10 md:h-10 bg-white shadow-sm flex items-center justify-center btn-hover-white group/btn">
                                             <svg
-                                                className="w-4 h-4 transform rotate-90 text-black"
+                                                className="w-4 h-4 transform rotate-90 text-black transition-transform duration-300 group-hover/btn:rotate-180"
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"

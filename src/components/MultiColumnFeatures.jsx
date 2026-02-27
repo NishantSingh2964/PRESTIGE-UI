@@ -52,6 +52,7 @@ const MultiColumnFeatures = () => {
                                 md:w-auto
                                 snap-start
                                 flex flex-col items-center text-center
+                                group
                             "
                         >
                             {/* Image */}
@@ -59,7 +60,7 @@ const MultiColumnFeatures = () => {
                                 <img
                                     src={feature.image}
                                     alt={feature.title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out group-hover:scale-110"
                                 />
                             </div>
 

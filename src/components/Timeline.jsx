@@ -53,29 +53,22 @@ const Timeline = () => {
             <div className="container mx-auto px-0 md:px-12 lg:px-24 max-w-7xl">
                 <div className="relative flex flex-col md:flex-row items-stretch bg-white shadow-sm overflow-hidden h-[600px] md:h-[500px]">
 
-                    {/* Left: Image Column (Ultra Smooth Sliding Track) */}
+                    {/* Left: Image Column (Matching ShopTheLook animation) */}
                     <div className="absolute inset-0 md:relative md:w-1/2 overflow-hidden bg-gray-100">
-                        <div
-                            className="flex h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
-                            style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}
-                        >
-                            {timelineData.map((item, index) => (
-                                <div key={`image-${index}`} className="h-full w-full flex-shrink-0 relative">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="h-full w-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/40 md:hidden" />
-                                </div>
-                            ))}
-                        </div>
+                        <img
+                            key={`timeline-img-${activeIndex}`}
+                            src={timelineData[activeIndex].image}
+                            alt={timelineData[activeIndex].title}
+                            className="h-full w-full object-cover animate-fade-in-left"
+                        />
+                        {/* Mobile Overlay */}
+                        <div className="absolute inset-0 bg-black/40 md:hidden pointer-events-none" />
                     </div>
 
                     {/* Right: Content Column */}
                     <div className="relative z-10 w-full h-full md:w-1/2 flex items-center justify-center md:items-stretch md:justify-end p-4 md:p-0">
                         <div className="bg-transparent md:bg-transparent p-0 md:p-10 shadow-none md:shadow-none w-full max-w-[320px] md:max-w-none text-center md:text-left flex flex-col justify-center md:justify-end">
-                            <div key={`content-${activeIndex}`} className="animate-slow-fade-in">
+                            <div key={`content-${activeIndex}`} className="animate-fade-in-up">
                                 <p className="text-[8px] md:text-[11px] uppercase tracking-[0.1em] font-bold text-white/60 md:text-[#1c1c1c]/60 mb-2 md:mb-3">
                                     {timelineData[activeIndex].tag}
                                 </p>

@@ -45,23 +45,29 @@ const ScrollingImages = () => {
     // Smooth natural fade for text blocks
     useEffect(() => {
         const handleScroll = () => {
-            itemRefs.current.forEach((el) => {
+            itemRefs.current.forEach((el, index) => {
                 if (!el) return;
 
                 const rect = el.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-
                 const elementCenter = rect.top + rect.height / 2;
                 const viewportCenter = windowHeight / 2;
 
                 const distance = Math.abs(viewportCenter - elementCenter);
-                const maxDistance = windowHeight / 2;
 
-                let opacity = 1 - distance / maxDistance;
+                // Opacity focuses at center
+                let opacity = 1 - (distance / (windowHeight * 0.45));
                 opacity = Math.max(0, Math.min(1, opacity));
 
+                // Parallax: relative distance from center determines the float
+                const relativePos = viewportCenter - elementCenter;
+
+                // Increase factor for second item to make it "scroll more"
+                const factor = index === 1 ? 0.15 : 0.08;
+                const translateY = relativePos * factor;
+
                 el.style.opacity = opacity;
-                el.style.transform = `translateY(${distance * 0.02}px)`;
+                el.style.transform = `translateY(${translateY}px)`;
             });
         };
 
