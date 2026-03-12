@@ -16,32 +16,32 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                     <div className="col-span-3 col-start-2 grid grid-cols-2 gap-8">
                         {/* Discover Column */}
                         <div className="flex flex-col gap-6 tracking-[0.025em]">
-                            <h3 className="text-[11px] tracking-[0.2em] font-medium text-gray-500 uppercase">Discover</h3>
+                            <h3 className="text-[13px] tracking-[0.2em] font-medium text-gray-500 uppercase">Discover</h3>
                             <ul className="flex flex-col gap-4">
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">Theme Features</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">Theme Features</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">Our story</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">Our story</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">Commitments</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">Commitments</a>
                                 </li>
                             </ul>
                         </div>
 
                         {/* More Column */}
                         <div className="flex flex-col gap-6 tracking-[0.025em]">
-                            <h3 className="text-[11px] tracking-[0.2em] font-medium text-gray-500 uppercase">More</h3>
+                            <h3 className="text-[13px] tracking-[0.2em] font-medium text-gray-500 uppercase">More</h3>
                             <ul className="flex flex-col gap-4">
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">Materials and Care</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">Materials and Care</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">FAQ</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="text-[11px] text-gray-500 hover:text-gray-500 transition-colors">Contact</a>
+                                    <a href="#" className="text-[13px] text-gray-500 hover:text-gray-500 transition-colors">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -59,8 +59,8 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                                 />
                             </div>
                             <div className="text-center flex flex-col gap-1">
-                                <h4 className="text-[12px] tracking-[0.1em] uppercase font-normal text-gray-900">The story</h4>
-                                <p className="text-[10px] tracking-[0.1em] uppercase text-gray-500 font-light">of léo et violette</p>
+                                <h4 className="text-[14px] tracking-[0.1em] uppercase font-normal text-gray-900">The story</h4>
+                                <p className="text-[12px] tracking-[0.1em] uppercase text-gray-500 font-light">of léo et violette</p>
                             </div>
                         </div>
 
@@ -74,8 +74,8 @@ const BlogMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                                 />
                             </div>
                             <div className="text-center flex flex-col gap-1">
-                                <h4 className="text-[12px] tracking-[0.1em] uppercase font-normal text-gray-900">our Commitments</h4>
-                                <p className="text-[10px] tracking-[0.1em] uppercase text-gray-500 font-light">From design to distribution</p>
+                                <h4 className="text-[14px] tracking-[0.1em] uppercase font-normal text-gray-900">our Commitments</h4>
+                                <p className="text-[12px] tracking-[0.1em] uppercase text-gray-500 font-light">From design to distribution</p>
                             </div>
                         </div>
                     </div>

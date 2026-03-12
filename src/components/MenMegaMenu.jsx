@@ -9,36 +9,38 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                 }`}
         >
             <div className="max-w-[1400px] mx-auto px-12 py-12 flex gap-12">
-                {/* Links Columns */}
-                <div className="flex-1 grid grid-cols-3 gap-8">
-                    {/* Column 1: Bags */}
-                    <div className="space-y-6 tracking-[0.025em]">
-                        <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Bags</h3>
-                        <ul className="space-y-4">
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Business bags</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Weekend bag</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">All Products</a></li>
-                        </ul>
-                    </div>
+                {/* Links Columns - Wrapped in flex-1 to anchor promo section to the right */}
+                <div className="flex-1">
+                    <div className="w-fit grid grid-cols-2 gap-x-12 gap-y-12">
+                        {/* Column 1: Bags */}
+                        <div className="space-y-4 tracking-[0.025em]">
+                            <h3 className="text-[13px] tracking-[0.2em] font-extralight text-black/80 uppercase">Bags</h3>
+                            <ul className="space-y-2.5">
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Business bags</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Weekend bag</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">All Products</a></li>
+                            </ul>
+                        </div>
 
-                    {/* Column 2: Small leather goods */}
-                    <div className="space-y-6 tracking-[0.025em]">
-                        <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Small leather goods</h3>
-                        <ul className="space-y-4">
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Wallet</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Card holder</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">All Products</a></li>
-                        </ul>
-                    </div>
+                        {/* Column 2: Small leather goods */}
+                        <div className="space-y-4 tracking-[0.025em]">
+                            <h3 className="text-[13px] tracking-[0.2em] font-extralight text-black/80 uppercase">Small leather goods</h3>
+                            <ul className="space-y-2.5">
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Wallet</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Card holder</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">All Products</a></li>
+                            </ul>
+                        </div>
 
-                    {/* Column 3: Popular Colors */}
-                    <div className="space-y-6 tracking-[0.025em]">
-                        <h3 className="text-[11px] tracking-[0.2em] font-extralight text-black/80 uppercase">Popular colors</h3>
-                        <ul className="space-y-4">
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Black</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Navy</a></li>
-                            <li><a href="#" className="text-[11px] text-gray-500 hover:text-grey-500 transition-colors">Khaki</a></li>
-                        </ul>
+                        {/* Column 3: Popular Colors */}
+                        <div className="space-y-4 tracking-[0.025em]">
+                            <h3 className="text-[13px] tracking-[0.2em] font-extralight text-black/80 uppercase">Popular colors</h3>
+                            <ul className="space-y-2.5">
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Black</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Navy</a></li>
+                                <li><a href="#" className="text-[13px] text-gray-500 hover:text-grey-500 transition-colors">Khaki</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -53,8 +55,8 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                             />
                         </div>
                         <div className="mt-4 text-center space-y-1">
-                            <p className="text-[10px] tracking-[0.2em] font-medium text-black uppercase">LE NOUVEAU CARTABLE</p>
-                            <p className="text-[11px] text-gray-400 italic">5 colors, from $420</p>
+                            <p className="text-[12px] tracking-[0.2em] font-medium text-black uppercase">LE NOUVEAU CARTABLE</p>
+                            <p className="text-[12px] text-gray-400 italic">5 colors, from $420</p>
                         </div>
                     </div>
 
@@ -67,8 +69,8 @@ const MenMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
                             />
                         </div>
                         <div className="mt-4 text-center space-y-1">
-                            <p className="text-[10px] tracking-[0.2em] font-medium text-black uppercase">LE PORTE-CARTES</p>
-                            <p className="text-[11px] text-gray-400 italic">accessories</p>
+                            <p className="text-[12px] tracking-[0.2em] font-medium text-black uppercase">LE PORTE-CARTES</p>
+                            <p className="text-[12px] text-gray-400 italic">accessories</p>
                         </div>
                     </div>
                 </div>

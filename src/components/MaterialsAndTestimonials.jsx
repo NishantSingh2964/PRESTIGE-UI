@@ -48,7 +48,7 @@ const MaterialsAndTestimonials = () => {
                         </p>
                         <a
                             href="/pages/commitments"
-                            className="text-[12px] tracking-[0.1em] font-extralight text-[#1c1c1c] border-b border-[#1c1c1c]/20 hover:border-[#1c1c1c] transition-all pb-1"
+                            className="text-[12px] tracking-[0.1em] font-extralight text-[#1c1c1c] relative pb-1 inline-block after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-[#1c1c1c] after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left after:scale-x-100 hover:after:scale-x-0"
                         >
                             Learn more
                         </a>

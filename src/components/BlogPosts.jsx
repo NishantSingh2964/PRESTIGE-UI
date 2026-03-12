@@ -45,7 +45,7 @@ const BlogCard = ({ post }) => {
 
                 <a
                     href={post.link}
-                    className="text-[10px] uppercase tracking-[0.2em] font-light underline underline-offset-[6px] decoration-[#1c1c1c]/20 hover:decoration-[#1c1c1c] transition-all duration-300"
+                    className="text-[10px] uppercase tracking-[0.2em] font-light relative pb-1 inline-block after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-[#1c1c1c] after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left after:scale-x-100 hover:after:scale-x-0"
                 >
                     Read more
                 </a>

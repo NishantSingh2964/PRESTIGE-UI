@@ -133,7 +133,7 @@ const ScrollingImages = () => {
 
                                     <a
                                         href={item.linkUrl}
-                                        className="text-[12px] tracking-[0.18em] uppercase font-extralight text-white border-b border-white/30 hover:border-white transition-all pb-1 duration-300"
+                                        className="text-[12px] tracking-[0.18em] uppercase font-extralight text-white relative pb-1 inline-block after:content-[''] after:absolute after:w-full after:h-[1.5px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left after:scale-x-100 hover:after:scale-x-0"
                                     >
                                         {item.linkText}
                                     </a>
@@ -159,7 +159,12 @@ const ScrollingImages = () => {
                                     <h3 className="text-[20px] tracking-[0.2em] uppercase font-light text-white mb-6">{item.title}</h3>
                                     <p className="text-[14px] leading-relaxed text-white/80 mb-8 font-light px-4">{item.text}</p>
                                     <div className="mb-14">
-                                        <a href={item.linkUrl} className="text-[12px] tracking-widest uppercase text-white border-b border-white/30 pb-1 duration-300 hover:border-white">{item.linkText}</a>
+                                        <a
+                                            href={item.linkUrl}
+                                            className="text-[12px] tracking-widest uppercase text-white relative pb-1 group after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left group-hover:after:scale-x-0"
+                                        >
+                                            {item.linkText}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
