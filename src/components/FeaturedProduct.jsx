@@ -114,16 +114,16 @@ const FeaturedProduct = () => {
                             {/* Color Selection */}
                             <div className="space-y-5">
                                 <p className="text-[12px] tracking-[0.1em] font-light text-[#1c1c1c]/80">
-                                    Color: <span className="font-normal tracking-normal">Camel Liégé</span>
+                                    <span className="font-normal tracking-normal">Color: Camel Liégé</span>
                                 </p>
                                 <div className="flex gap-4">
-                                    <div className="w-7 h-7 bg-[#A0522D] border border-black/5 cursor-pointer ring-1 ring-offset-4 ring-transparent ring-black transition-all active:scale-95" />
+                                    <div className="w-7 h-7 bg-[#A0522D] border border-black/5 cursor-pointer ring-1 ring-offset-2 ring-black transition-all active:scale-95" />
                                 </div>
                             </div>
 
                             {/* Quantity Selector */}
                             <div className="space-y-5">
-                                <div className="flex items-center w-fit border border-[#1c1c1c]/10 bg-white">
+                                <div className="flex items-center w-fit border border-black/5 bg-transparent">
                                     <button
                                         onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                         className="px-6 py-4 hover:bg-gray-50 transition-colors"

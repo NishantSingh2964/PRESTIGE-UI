@@ -159,6 +159,25 @@ const ShopTheLook = () => {
                                             alt={currentProduct.title}
                                             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
                                         />
+
+                                        {/* Quick Add Button */}
+                                        <div className="absolute bottom-0 right-0 p-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <button className="w-8 h-8 md:w-9 md:h-9 bg-white shadow-sm flex items-center justify-center group/btn">
+                                                <svg
+                                                    className="w-4 h-4 transform rotate-90 text-black transition-transform duration-300 group-hover/btn:rotate-180"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth="1.5"
+                                                        d="M12 4v16m8-8H4"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 

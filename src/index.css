@@ -23,21 +23,41 @@
   }
 
   .btn-hover-white {
-    @apply btn-hover-base text-black border border-transparent;
-    background-image: linear-gradient(to right, transparent 50%, white 50%);
+    @apply relative overflow-hidden transition-all duration-500 z-10 border border-white text-black;
+  }
+
+  .btn-hover-white::before {
+    content: '';
+    @apply absolute inset-0 bg-white transform scale-x-100 -z-10 transition-transform duration-500;
+    transform-origin: left;
   }
 
   .btn-hover-white:hover {
-    @apply text-white border-white;
+    @apply text-white;
+  }
+
+  .btn-hover-white:hover::before {
+    @apply scale-x-0;
+    transform-origin: right;
   }
 
   .btn-hover-black-hero {
-    @apply btn-hover-base text-white border border-transparent;
-    background-image: linear-gradient(to right, transparent 50%, black 50%);
+    @apply relative overflow-hidden transition-all duration-500 z-10 border border-black text-white;
+  }
+
+  .btn-hover-black-hero::before {
+    content: '';
+    @apply absolute inset-0 bg-black transform scale-x-100 -z-10 transition-transform duration-500;
+    transform-origin: left;
   }
 
   .btn-hover-black-hero:hover {
-    @apply text-white border-white;
+    /* Background disappears, reveals transparent/video behind */
+  }
+
+  .btn-hover-black-hero:hover::before {
+    @apply scale-x-0;
+    transform-origin: right;
   }
 
   .btn-premium-slide {

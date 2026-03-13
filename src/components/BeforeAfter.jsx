@@ -82,7 +82,7 @@ const BeforeAfter = () => {
                             <p className="text-[13px] md:text-[15px] uppercase tracking-[0.15em] font-light mb-1">
                                 Almond green Liégé
                             </p>
-                            <a href="#" className="text-[11px] uppercase tracking-[0.1em] border-b border-black/30 hover:border-black transition-colors pointer-events-auto">
+                            <a href="#" className="text-[11px] uppercase tracking-[0.1em] text-black relative pb-1 inline-block pointer-events-auto after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left after:scale-x-100 hover:after:scale-x-0">
                                 View product
                             </a>
                         </div>
@@ -103,7 +103,7 @@ const BeforeAfter = () => {
                             <p className="text-[13px] md:text-[15px] uppercase tracking-[0.15em] font-light mb-1">
                                 Blue denim Liégé
                             </p>
-                            <a href="#" className="text-[11px] uppercase tracking-[0.1em] border-b border-black/30 hover:border-black transition-colors pointer-events-auto">
+                            <a href="#" className="text-[11px] uppercase tracking-[0.1em] text-black relative pb-1 inline-block pointer-events-auto after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:bottom-0 after:left-0 after:transition-transform after:duration-500 after:ease-in-out after:origin-left after:scale-x-100 hover:after:scale-x-0">
                                 View product
                             </a>
                         </div>

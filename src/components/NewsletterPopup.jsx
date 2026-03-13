@@ -34,17 +34,17 @@ const NewsletterPopup = () => {
                 aria-label="Close"
             >
                 <span className="sr-only">Close</span>
-                <svg aria-hidden="true" focusable="false" fill="none" width="18" height="18" className="transform group-hover:rotate-90 transition-transform duration-300" viewBox="0 0 16 16">
+                <svg aria-hidden="true" focusable="false" fill="none" width="18" height="18" className="" viewBox="0 0 16 16">
                     <path d="m1 1 14 14M1 15 15 1" stroke="currentColor" strokeWidth="1"></path>
                 </svg>
             </button>
 
             <div className="flex flex-col gap-6 md:gap-4 mt-1">
                 <div className="flex flex-col gap-4 text-center md:px-2">
-                    <h2 className="text-[20px] md:text-[18px] font-normal tracking-[0.3em] leading-[1.4] text-white/70 uppercase font-sans font-extralight">
+                    <h2 className="text-[20px] md:text-[18px] font-normal tracking-[0.2em] leading-[1.4] text-white/70 uppercase font-sans font-extralight px-4">
                         Signup for our<br />newsletter
                     </h2>
-                    <p className="text-[15px] font-light text-white/90 leading-relaxed">
+                    <p className="text-[12px] font-light text-white/90 leading-relaxed">
                         Describe what your customers will receive when subscribing to your newsletter.
                     </p>
                 </div>
@@ -60,17 +60,16 @@ const NewsletterPopup = () => {
                         <input
                             type="email"
                             id="newsletter-email"
-                            className="w-full bg-transparent border border-[#333] text-white px-5 py-[14px] text-[15px] outline-none focus:border-white transition-colors placeholder:text-[#888] font-light"
+                            className="w-full bg-transparent border border-[#333] text-white px-3 py-[10px] text-[15px] outline-none focus:border-white transition-colors placeholder:text-[#888] font-light"
                             placeholder="E-mail"
                             required
                         />
                     </div>
                     <button
                         type="submit"
-                        className="group relative w-full bg-transparent text-white border border-white uppercase tracking-[0.15em] text-[13px] font-semibold py-[14px] overflow-hidden mt-1"
+                        className="btn-hover-white w-full uppercase tracking-[0.15em] text-[13px] font-extralight py-[10px] mt-1"
                     >
-                        <div className="absolute inset-0 w-full h-full bg-white transition-all duration-300 ease-out origin-right scale-x-100 group-hover:scale-x-0"></div>
-                        <span className="relative z-10 transition-colors duration-300 group-hover:text-white text-black">Subscribe</span>
+                        Subscribe
                     </button>
                 </form>
             </div>
